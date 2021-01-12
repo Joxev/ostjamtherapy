@@ -1,0 +1,14 @@
+title: Start
+tags: 
+colorID: 0
+position: 241,-76
+---
+Hi!
+<<SetSpeaker Max Happy>> 
+What color do you like?
+-> Red
+    Pretty Cool!
+-> Blue
+    Just like the sky!
+Cya!
+===

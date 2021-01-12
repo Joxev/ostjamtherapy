@@ -352,7 +352,6 @@ namespace Yarn.Unity {
             currentOptionSelectionHandler = selectOption;
             
             foreach (var optionString in optionsCollection.Options) {
-                print("again");
                 optionButtons [i].gameObject.SetActive (true);
 
                 _OptionButtons.Add(optionButtons[i]);
@@ -384,9 +383,7 @@ namespace Yarn.Unity {
             {
                 if(!_OptionButtons.Contains(b))
                 {
-                    print("set false");
                     b.gameObject.SetActive(false);
-                    print(b.gameObject.active);
                 }
             }
 
