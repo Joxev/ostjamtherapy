@@ -3,12 +3,17 @@ tags:
 colorID: 0
 position: 241,-76
 ---
+<<SetSpeaker Max Neutral>> 
 Hi!
-<<SetSpeaker Max Happy>> 
+<<SetSpeaker Jack Happy>> 
 What color do you like?
 -> Red
+    <<SetSpeaker Jack Happy>> 
     Pretty Cool!
 -> Blue
-    Just like the sky!
+    <<SetSpeaker Jack Sad>> 
+    I hate blue!
+
+<<SetSpeaker Max Sad>> 
 Cya!
 ===

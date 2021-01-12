@@ -15,8 +15,8 @@ MonoBehaviour:
   speakerName: Jack
   emotions:
   - name: Happy
-    icon: {fileID: 21300000, guid: 3eba3a9b622787849a91fd39819ec807, type: 3}
+    icon: {fileID: 21300000, guid: 779aa036b0dfcfc408dbbbbcf89a6063, type: 3}
   - name: Sad
-    icon: {fileID: 21300000, guid: a96eadb0b6e7ff84ebb5ac0644c411a5, type: 3}
-  - name: Shocked
-    icon: {fileID: 21300000, guid: 2987bb3aebec92845857b28119581d55, type: 3}
+    icon: {fileID: 21300000, guid: a1baa93f7cb6b9f4d989ba15750cfa21, type: 3}
+  - name: Neutral
+    icon: {fileID: 21300000, guid: c8a6cb02bdb5e674fa3bc78058337c36, type: 3}

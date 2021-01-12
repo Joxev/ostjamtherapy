@@ -24,6 +24,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     public DialogueRunner dialogueRunner;
     public DialogueUI dialogueUI;
+    public GameObject text;
 
     public bool canContinue;
 
@@ -70,9 +71,11 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 if(p.speakerData == data)
                 {
                     physicalSpeaker = p;
+                    print(physicalSpeaker.speakerData.name);
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
+            text.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
     }
 
