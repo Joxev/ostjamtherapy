@@ -280,6 +280,7 @@ namespace Yarn.Unity {
             // The final text we'll be showing for this line.
             string text = localisationProvider.GetLocalisedTextForLine(line);
 
+
             if (text == null) {
                 Debug.LogWarning($"Line {line.ID} doesn't have any localised text.");
                 text = line.ID;
@@ -346,10 +347,15 @@ namespace Yarn.Unity {
 
             waitingForOptionSelection = true;
 
+            List<Button> _OptionButtons = new List<Button>();
+
             currentOptionSelectionHandler = selectOption;
             
             foreach (var optionString in optionsCollection.Options) {
+                print("again");
                 optionButtons [i].gameObject.SetActive (true);
+
+                _OptionButtons.Add(optionButtons[i]);
 
                 // When the button is selected, tell the dialogue about it
                 optionButtons [i].onClick.RemoveAllListeners();
@@ -373,6 +379,15 @@ namespace Yarn.Unity {
                 }
 
                 i++;
+            }
+            foreach(Button b in optionButtons)
+            {
+                if(!_OptionButtons.Contains(b))
+                {
+                    print("set false");
+                    b.gameObject.SetActive(false);
+                    print(b.gameObject.active);
+                }
             }
 
             onOptionsStart?.Invoke();

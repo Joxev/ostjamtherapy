@@ -1,0 +1,13 @@
+title: Start
+tags: 
+colorID: 0
+position: 241,-76
+---
+Max: Hi!
+Max:What color do you like?
+-> Red
+    Max: Pretty Cool!
+-> Blue
+    Max: Just like the sky!
+Max: Cya!
+===

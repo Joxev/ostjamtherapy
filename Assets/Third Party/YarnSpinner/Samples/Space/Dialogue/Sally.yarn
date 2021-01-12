@@ -1,3 +1,10 @@
+title: Start
+tags: 
+colorID: 0
+position: 187,83
+---
+Empty Text
+===
 title: Sally
 tags: 
 colorID: 0
@@ -22,7 +29,6 @@ position: 524,111
 <<endif>>
 [[See you later.|Sally.Exit]] #line:0facf7
 ===
-
 title: Sally.Watch
 tags: 
 colorID: 0
@@ -37,7 +43,6 @@ Sally: Oh, Ship wanted to see you. Go say hi to it. #line:df4eaf
     Sally: Go say hi again. #line:5df323
 <<endif>>
 ===
-
 title: Sally.Exit
 tags: 
 colorID: 6
@@ -45,7 +50,6 @@ position: 211,417
 ---
 Sally: Bye. #line:60c282
 ===
-
 title: Sally.Sorry
 tags: 
 colorID: 0
