@@ -5,6 +5,7 @@ using System;
 using Yarn;
 using Yarn.Unity;
 using UnityEngine.UI;
+using TMPro;
 
 public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 {
@@ -32,6 +33,11 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     public List<SpeakerData> speakers = new List<SpeakerData>();
 
+    [Header("Tags")]
+    public ObjectShake textShake;
+
+
+
     private void Awake()
     {
         base.Awake();
@@ -40,6 +46,8 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
             speakerDatabase.Add(s.speakerName, s);
         }
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
+        dialogueRunner.AddCommandHandler("SetPortrait", SetSpeakerPortrait);
+        dialogueRunner.AddCommandHandler("SetTags", SetDialogueTags);
     }
 
     private void Start()
@@ -58,7 +66,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         }
     }
 
-    public void SetSpeakerInfo(string[] info)
+    public void SetSpeakerPortrait(string[] info)
     {
         string speaker = info[0];
         string emotion = info[1];
@@ -75,8 +83,64 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
+        }
+    }
+
+    public void SetSpeakerInfo(string[] info)
+    {
+        string speaker = info[0];
+        string emotion = info[1];
+
+        if (speakerDatabase.TryGetValue(speaker, out SpeakerData data))
+        {
+            PhysicalSpeaker physicalSpeaker = new PhysicalSpeaker();
+            foreach (PhysicalSpeaker p in physicalSpeakers)
+            {
+                if (p.speakerData == data)
+                {
+                    physicalSpeaker = p;
+                    print(physicalSpeaker.speakerData.name);
+                }
+            }
+            physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
             text.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
+    }
+
+    public void SetDialogueTags(string[] info)
+    {
+        foreach(string s in info)
+        {
+            switch(s)
+            {
+                case "Shake":
+                    textShake.Shake();
+                    break;
+                case "TempShake":
+                    textShake.TempShake();
+                    break;
+                case "NoType":
+                    dialogueUI.textSpeed = 0;
+                    break;
+                case "Red":
+                    text.GetComponent<TextMeshProUGUI>().color = new Color32(214, 32, 15, 255);
+                    print(text.GetComponent<TextMeshProUGUI>().color);
+                    print("red");
+                    break;
+                case "Bold":
+                    text.GetComponent<Animator>().SetBool("bold", true);
+                    break;
+
+            }
+        }
+    }
+
+    public void StopDialogTags()
+    {
+        textShake.StopShake();
+        dialogueUI.textSpeed = .025f;
+        text.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+        text.GetComponent<Animator>().SetBool("bold", false);
     }
 
     #region Choice Management
