@@ -83,6 +83,10 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         {
             autoAdvance = false;
         }
+        foreach(PhysicalSpeaker p in physicalSpeakers)
+        {
+            p.speaker.GetComponent<Animator>().SetBool("talking", false);
+        }
     }
 
     //
@@ -124,6 +128,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
+            physicalSpeaker.speaker.GetComponent<Animator>().SetBool("talking", true);
             textParent.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
     }
