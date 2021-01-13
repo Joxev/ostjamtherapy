@@ -2,31 +2,31 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="Workspace" id="{35214c53-3681-4831-bd6b-bd84eaff8692}">
 		<relationship name="masterEventFolder">
-			<destination>{a2290fd2-e275-4413-b1c7-d947b85c371b}</destination>
+			<destination>{bb6e895d-da1a-4044-a9f7-1611a0e3fb7c}</destination>
 		</relationship>
 		<relationship name="masterTagFolder">
-			<destination>{00a6ef4c-68ec-45e5-82f3-91d89549dcba}</destination>
+			<destination>{54af331e-ad5c-429c-a897-eda19897c5b4}</destination>
 		</relationship>
 		<relationship name="masterEffectPresetFolder">
-			<destination>{4944d7f6-5fe8-4604-8d33-ec8ddbffc32d}</destination>
+			<destination>{a2b250d5-9cd9-4619-b988-60a066941d45}</destination>
 		</relationship>
 		<relationship name="masterParameterPresetFolder">
-			<destination>{c5e66305-4f98-4552-a10e-7a1e3fa3a279}</destination>
+			<destination>{38062142-00bf-4e25-978a-019070d922ab}</destination>
 		</relationship>
 		<relationship name="masterBankFolder">
-			<destination>{4acee736-b696-4567-972d-a61cfff0899a}</destination>
+			<destination>{ba250954-15ff-40fa-897a-058234390993}</destination>
 		</relationship>
 		<relationship name="masterSandboxFolder">
-			<destination>{990a59dc-6fd8-48b6-bdf4-d96698e5ed68}</destination>
+			<destination>{67dc9265-c1fb-4a45-8dba-e5b47133309b}</destination>
 		</relationship>
 		<relationship name="masterAssetFolder">
-			<destination>{54f6c0bd-8cb5-43a2-a93e-68a93e1a1ddf}</destination>
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
 		</relationship>
 		<relationship name="mixer">
-			<destination>{c1356779-6484-4d03-bc14-68a3e2406c21}</destination>
+			<destination>{da0c23e6-e53f-4f34-8431-4b0b777491a0}</destination>
 		</relationship>
 		<relationship name="profilerSessionFolder">
-			<destination>{48f79b80-9910-40ed-8e2e-007324f7a554}</destination>
+			<destination>{edfdb26a-46fe-41c8-9b5f-a6fe06a12e56}</destination>
 		</relationship>
 		<relationship name="platforms">
 			<destination>{c44e6a1b-b074-4bbd-8a40-b55f4db408c1}</destination>
