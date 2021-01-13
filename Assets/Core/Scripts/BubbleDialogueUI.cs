@@ -26,6 +26,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
     public DialogueRunner dialogueRunner;
     public DialogueUI dialogueUI;
     public GameObject text;
+    public GameObject textParent;
 
     public bool canContinue;
 
@@ -123,7 +124,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
-            text.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
+            textParent.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
     }
 
@@ -149,6 +150,18 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                     break;
                 case "Bold":
                     text.GetComponent<Animator>().SetBool("bold", true);
+                    break;
+                case "Small":
+                    textParent.transform.localScale = new Vector3(.7f, .7f, 1f);
+                    print("tag");
+                    break;
+                case "Big":
+                    textParent.transform.localScale = new Vector3(1.4f, 1.4f, 1f);
+                    print("tag");
+                    break;
+                case "Huge":
+                    textParent.transform.localScale = new Vector3(1.8f, 1.8f, 1f);
+                    print("tag");
                     break;
 
             }
@@ -178,6 +191,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         dialogueUI.textSpeed = .025f;
         text.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
         text.GetComponent<Animator>().SetBool("bold", false);
+        textParent.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
     }
 
     #region Choice Management
