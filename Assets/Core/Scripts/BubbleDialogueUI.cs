@@ -33,8 +33,12 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     public List<SpeakerData> speakers = new List<SpeakerData>();
 
+    bool autoAdvance = false;
+    int advancesLeft = 0;
+
     [Header("Tags")]
     public ObjectShake textShake;
+    public float autoAdvanceTime = 1.5f;
 
 
 
@@ -48,6 +52,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
         dialogueRunner.AddCommandHandler("SetPortrait", SetSpeakerPortrait);
         dialogueRunner.AddCommandHandler("SetTags", SetDialogueTags);
+        dialogueRunner.AddCommandHandler("AutoAdvance", SetAutoAdvance);
     }
 
     private void Start()
@@ -59,12 +64,27 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(canContinue)
+            if(canContinue && !autoAdvance)
             {
                 dialogueUI.MarkLineComplete();
             }
         }
     }
+
+    //
+    public void OnLineFinishDisplaying()
+    {
+        if(autoAdvance && advancesLeft > 0)
+        {
+            StartCoroutine(autoAdvanceCo());
+        }
+        else if(autoAdvance)
+        {
+            autoAdvance = false;
+        }
+    }
+
+    //
 
     public void SetSpeakerPortrait(string[] info)
     {
@@ -133,6 +153,23 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
             }
         }
+    }
+
+    public void SetAutoAdvance(string[] info)
+    {
+        int result;
+        if(int.TryParse(info[0], out result))
+        {
+            autoAdvance = true;
+            advancesLeft = result;
+        }
+    }
+
+    private IEnumerator autoAdvanceCo()
+    {
+        yield return new WaitForSeconds(autoAdvanceTime);
+        dialogueUI.MarkLineComplete();
+        advancesLeft--;
     }
 
     public void StopDialogTags()

@@ -12,9 +12,13 @@ What color do you like?
     Pretty Cool!
 -> Blue
     <<SetSpeaker Jack Sad>> 
-    <<SetTags TempShake NoType Red Bold>> 
+    <<SetTags NoType Red Bold>> 
     I hate blue!
 
 <<SetSpeaker Max Sad>> 
 Cya!
+<<AutoAdvance 1>> 
+Wait
+NVM
+Bye
 ===
