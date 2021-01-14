@@ -10,8 +10,17 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: en-US
   stringIDs:
-  - Test-Start-0
-  - Test-Start-1
+  - Test-Test.Start-0
+  - Test-Test.Start-1
+  - Test-Test.Start-2
+  - Test-Test.Start-3
+  - Test-Test.Start-4
+  - Test-Test.Start-5
+  - Test-Test.Blue-6
+  - Test-Test.Blue-7
+  - Test-Test.Anger.Start-8
+  - Test-Test.Anger.Start-9
+  - Test-Test.Anger.Start-10
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
