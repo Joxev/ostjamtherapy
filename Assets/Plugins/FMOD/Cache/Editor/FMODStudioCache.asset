@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1849951494614365853
+--- !u!114 &-7622020293960615421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637461335818975883
+  lastModified: 637461531185631523
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -34,17 +34,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1849951494614365853}
-  - {fileID: 2289218216052763318}
+  - {fileID: -7622020293960615421}
+  - {fileID: 4553097283401339183}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2289218216052763318}
+  - {fileID: 4553097283401339183}
   StringsBanks:
-  - {fileID: -1849951494614365853}
-  stringsBankWriteTime: 637461335818975883
+  - {fileID: -7622020293960615421}
+  stringsBankWriteTime: 637461531185631523
   cacheVersion: 6
---- !u!114 &2289218216052763318
+--- !u!114 &4553097283401339183
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637461335818905831
+  lastModified: 637461531185631523
   LoadResult: 0
   FileSizes: []
   Exists: 1
