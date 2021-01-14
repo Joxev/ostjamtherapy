@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{bc57f09f-3e90-4014-bce2-c2307f2ca665}">
 		<property name="assetPath">
-			<value>27_-_CP_r_-_Moody_Doom_Shoes.ogg</value>
+			<value>OST Music/27_-_CP_r_-_Moody_Doom_Shoes.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

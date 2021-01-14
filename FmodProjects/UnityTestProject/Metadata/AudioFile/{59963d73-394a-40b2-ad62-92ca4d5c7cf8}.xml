@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{59963d73-394a-40b2-ad62-92ca4d5c7cf8}">
 		<property name="assetPath">
-			<value>25_-_Paper_Sailboat_-_Crown_Jewel_Industries_A_Subsidiary_of_Kepler_Inc..ogg</value>
+			<value>OST Music/25_-_Paper_Sailboat_-_Crown_Jewel_Industries_A_Subsidiary_of_Kepler_Inc..ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
