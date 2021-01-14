@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{b0f7d62d-88f9-475d-846f-7efa47a07c6f}">
+		<property name="name">
+			<value>Anger</value>
+		</property>
+		<relationship name="folder">
+			<destination>{38062142-00bf-4e25-978a-019070d922ab}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{17168a6c-b5bc-4212-8804-fd3787eb4727}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{17168a6c-b5bc-4212-8804-fd3787eb4727}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

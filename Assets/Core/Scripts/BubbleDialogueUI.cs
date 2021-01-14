@@ -124,7 +124,6 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 if (p.speakerData == data)
                 {
                     physicalSpeaker = p;
-                    print(physicalSpeaker.speakerData.name);
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
@@ -150,8 +149,6 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                     break;
                 case "Red":
                     text.GetComponent<TextMeshProUGUI>().color = new Color32(214, 32, 15, 255);
-                    print(text.GetComponent<TextMeshProUGUI>().color);
-                    print("red");
                     break;
                 case "Bold":
                     text.GetComponent<Animator>().SetBool("bold", true);

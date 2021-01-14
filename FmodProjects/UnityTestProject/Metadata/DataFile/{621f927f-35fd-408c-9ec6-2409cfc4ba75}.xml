@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="DataFile" id="{621f927f-35fd-408c-9ec6-2409cfc4ba75}">
+		<property name="assetPath">
+			<value>OST MUSIC ALL/awwbree - Terminal Lover/contact.txt</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
+		</relationship>
+	</object>
+</objects>
