@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{08cc7d47-30c3-46eb-9500-a33b61913122}">
+		<property name="assetPath">
+			<value>Menu/Hover_TickB/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
+		</relationship>
+	</object>
+</objects>

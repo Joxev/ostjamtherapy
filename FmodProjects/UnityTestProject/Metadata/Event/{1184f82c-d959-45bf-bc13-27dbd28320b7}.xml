@@ -5,13 +5,13 @@
 			<value>Yellow</value>
 		</property>
 		<property name="name">
-			<value>Music_Test2</value>
+			<value>Music_Gameplay</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{eb9aa954-f6b9-4253-b988-32eabe402850}</destination>
+			<destination>{46b99d47-c42a-4590-9fe3-f2b3fa5ab728}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a39b19fd-6130-4f8e-b392-5efc693e37c9}</destination>

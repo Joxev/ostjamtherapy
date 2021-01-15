@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{f13e2338-516a-49ec-b7de-c79907951ef7}">
+		<property name="assetPath">
+			<value>Menu/Confirm/UI_Menu_Confirm_9.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.18285714285714286</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
+		</relationship>
+	</object>
+</objects>
