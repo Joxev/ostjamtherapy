@@ -257,6 +257,10 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
     public void InitiateChoice()
     {
         canContinue = false;
+        foreach (PhysicalSpeaker p in physicalSpeakers)
+        {
+            p.speaker.GetComponent<Animator>().SetBool("talking", false);
+        }
     }
     public void StopInitiateChoice()
     {
