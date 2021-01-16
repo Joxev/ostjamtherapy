@@ -19,25 +19,23 @@ What color do you like?
 title: Test.Blue
 tags: 
 colorID: 0
-position: 114,169
+position: 116,170
 ---
-<< ChangeEmotionLevels>> 
+<< CheckEmotionLevels>> 
 << SetSpeaker Max Sad NoType Red TempShake>>
 I don't like blue
 << SetSpeaker Max Sad NoType Red TempShake>>
 Blue is terrible
-<< SetSpeaker Max Sad NoType Red TempShake>>
-Baba
 << PatientSuccess>>
 ===
 title: Test.Anger
 tags: 
 colorID: 0
-position: 384,-84
+position: 383,-84
 ---
 << SetSpeaker Jack Sad>> 
 I am so angry
-<< SetSpeaker Jack Sad>>  
+<< SetSpeaker Jack Sad>> 
 [[ Commit Suicide |Test.PlayerDeath]]
 [[ Dont Commit Suicide |Test.DontCommitSuicide]]
 ===
@@ -69,7 +67,7 @@ position: 376,-336
 << SetSpeaker Jack Neutral>> 
 Fine Ill Forgive you!
 << SetSpeaker Jack Neutral>> 
-<< ChangeEmotionValues Anger -30>> 
 What were we talking about again?
+<< ChangeEmotionValues Anger -30>> 
 << ResumeDialog>>
 ===

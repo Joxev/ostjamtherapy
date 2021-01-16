@@ -136,12 +136,10 @@ public class Patient : MonoBehaviour
                 pauseNode = BubbleDialogueUI.instance.dialogueRunner.CurrentNodeName;
                 if (currentSadness > currentAnger)
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.Stop();
                     BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + sadnessStartNode);
                 }
                 else
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.Stop();
                     BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + angerStartNode);
                 }
 
@@ -150,12 +148,10 @@ public class Patient : MonoBehaviour
             {
                 if (currentSadness > currentAnger)
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.Stop();
                     BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + suicideStartNode);
                 }
                 else
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.Stop();
                     BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + playerDeathStartNode);
                 }
             }
@@ -164,7 +160,6 @@ public class Patient : MonoBehaviour
 
     public void ResumeDialog(string[] info)
     {
-        BubbleDialogueUI.instance.dialogueRunner.Stop();
         BubbleDialogueUI.instance.dialogueRunner.StartDialogue(pauseNode);
     }
 }

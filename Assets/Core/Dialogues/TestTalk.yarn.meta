@@ -8,7 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-US
   stringIDs:
   - TestTalk-Test.Start-0
   - TestTalk-Test.Start-1
@@ -18,17 +18,17 @@ ScriptedImporter:
   - TestTalk-Test.Start-5
   - TestTalk-Test.Blue-6
   - TestTalk-Test.Blue-7
-  - TestTalk-Test.Blue-8
+  - TestTalk-Test.Anger-8
   - TestTalk-Test.Anger-9
   - TestTalk-Test.Anger-10
-  - TestTalk-Test.Anger-11
-  - TestTalk-Test.PlayerDeath-12
+  - TestTalk-Test.PlayerDeath-11
+  - TestTalk-Test.BreakingPointAnger-12
   - TestTalk-Test.BreakingPointAnger-13
-  - TestTalk-Test.BreakingPointAnger-14
+  - TestTalk-Test.DontCommitSuicide-14
   - TestTalk-Test.DontCommitSuicide-15
-  - TestTalk-Test.DontCommitSuicide-16
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 172cfcade85e84b49a147a7bcab37e31,
+    type: 3}
   localizations: []
