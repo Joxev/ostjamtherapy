@@ -1,11 +1,11 @@
 title: Test.Start
 tags: 
 colorID: 0
-position: 113,-81
+position: 116,-85
 ---
-<<SetSpeaker Max Neutral>> 
+<<SetSpeaker Max Neutral Red TempShake>>
 Hi!
-<<SetSpeaker Jack Happy>> 
+<<SetSpeaker Jack Happy Red TempShake>>
 What color do you like?
 -> Red
     <<SetSpeaker Jack Happy>> 
@@ -18,22 +18,22 @@ What color do you like?
 ===
 title: Test.Blue
 tags: 
-colorID: 6
-position: 114,168
+colorID: 0
+position: 114,169
 ---
-<< CheckEmotionLevels>>
-<<SetSpeaker Max Neutral>> 
-<<SetTags NoType Red TempShake>> 
+<< ChangeEmotionLevels>> 
+<< SetSpeaker Max Sad NoType Red TempShake>>
 I don't like blue
-<<SetSpeaker Max Neutral>> 
-<<SetTags NoType Red TempShake>> 
+<< SetSpeaker Max Sad NoType Red TempShake>>
 Blue is terrible
+<< SetSpeaker Max Sad NoType Red TempShake>>
+Baba
 << PatientSuccess>>
 ===
 title: Test.Anger
 tags: 
 colorID: 0
-position: 384,-80
+position: 384,-84
 ---
 << SetSpeaker Jack Sad>> 
 I am so angry
@@ -44,7 +44,7 @@ I am so angry
 title: Test.PlayerDeath
 tags: 
 colorID: 0
-position: 389,230
+position: 389,229
 ---
 << SetSpeaker Jack Sad>> 
 I am going to commit suicide
@@ -55,11 +55,9 @@ tags:
 colorID: 0
 position: 642,14
 ---
-<< SetSpeaker Jack Sad>>
-<< SetTags Shake Red Large>>
+<< SetSpeaker Jack Sad Shake Red Large>>
 You have not helped me at all!
-<< SetSpeaker Jack Sad>>
-<< SetTags Shake Red Large>>
+<< SetSpeaker Jack Sad Shake Red Large>>
 Why did i even agree to do this!
 [[ Test.PlayerDeath ]]
 ===

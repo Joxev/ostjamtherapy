@@ -4344,7 +4344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1969954945
 Transform:
   m_ObjectHideFlags: 0
@@ -4545,7 +4545,8 @@ SpriteRenderer:
   m_SortingLayerID: 668906609
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf3657b723a228548bc481039893c009, type: 3}
+  m_Sprite: {fileID: -8872905158024952030, guid: b3ad32e8365a28b4c9250f53e17ed948,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4594,7 +4595,7 @@ Animator:
   m_GameObject: {fileID: 2052067046}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d7172c909327334b9fd3707e4d8b24c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4733,7 +4734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientName: Test
-  yarnDialog: {fileID: 2480198943629176163, guid: 95488ab8919334143b57ec402b1c5e9b,
+  yarnDialog: {fileID: 2480198943629176163, guid: 172cfcade85e84b49a147a7bcab37e31,
     type: 3}
   yarnStartNode: Start
   angerStartNode: Anger

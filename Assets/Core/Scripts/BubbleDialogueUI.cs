@@ -36,11 +36,13 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     bool autoAdvance = false;
     int advancesLeft = 0;
+    bool noType;
 
     [Header("Tags")]
     public ObjectShake textShake;
     public float autoAdvanceTime = 1.5f;
 
+    private Coroutine stopTalk;
 
 
     private void Awake()
@@ -52,7 +54,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         }
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
         dialogueRunner.AddCommandHandler("SetPortrait", SetSpeakerPortrait);
-        dialogueRunner.AddCommandHandler("SetTags", SetDialogueTags);
+        //dialogueRunner.AddCommandHandler("SetTags", SetDialogueTags);
         dialogueRunner.AddCommandHandler("AutoAdvance", SetAutoAdvance);
     }
 
@@ -63,9 +65,9 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if(canContinue && !autoAdvance)
+            if (canContinue && !autoAdvance)
             {
                 dialogueUI.MarkLineComplete();
             }
@@ -85,7 +87,10 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         }
         foreach(PhysicalSpeaker p in physicalSpeakers)
         {
-            p.speaker.GetComponent<Animator>().SetBool("talking", false);
+            if (!noType)
+            {
+                p.speaker.GetComponent<Animator>().SetBool("talking", false);
+            }
         }
     }
 
@@ -104,7 +109,6 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 if(p.speakerData == data)
                 {
                     physicalSpeaker = p;
-                    print(physicalSpeaker.speakerData.name);
                 }
             }
             physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
@@ -116,9 +120,10 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         string speaker = info[0];
         string emotion = info[1];
 
+        PhysicalSpeaker physicalSpeaker = new PhysicalSpeaker();
+
         if (speakerDatabase.TryGetValue(speaker, out SpeakerData data))
         {
-            PhysicalSpeaker physicalSpeaker = new PhysicalSpeaker();
             foreach (PhysicalSpeaker p in physicalSpeakers)
             {
                 if (p.speakerData == data)
@@ -130,13 +135,64 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
             physicalSpeaker.speaker.GetComponent<Animator>().SetBool("talking", true);
             textParent.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
+
+        int index = 0;
+        foreach (string s in info)
+        {
+            print("super");
+            if (index > 1)
+            {
+                print("Ah");
+                switch (s)
+                {
+                    case "Shake":
+                        textShake.Shake();
+                        break;
+                    case "TempShake":
+                        textShake.TempShake();
+                        break;
+                    case "NoType":
+                        noType = true;
+                        dialogueUI.textSpeed = 0;
+                        break;
+                    case "Red":
+                        print("Sup nigga");
+                        text.GetComponent<TextMeshProUGUI>().color = new Color32(214, 32, 15, 255);
+                        break;
+                    case "Bold":
+                        text.GetComponent<Animator>().SetBool("bold", true);
+                        break;
+                    case "Small":
+                        textParent.transform.localScale = new Vector3(.7f, .7f, 1f);
+                        break;
+                    case "Big":
+                        textParent.transform.localScale = new Vector3(1.4f, 1.4f, 1f);
+                        break;
+                    case "Huge":
+                        textParent.transform.localScale = new Vector3(1.8f, 1.8f, 1f);
+                        break;
+
+                }
+            }
+            index++;
+        }
+        if (noType)
+        {
+            stopTalk = StartCoroutine(StopNoTypeTalking(physicalSpeaker));
+        }
     }
 
-    public void SetDialogueTags(string[] info)
+    IEnumerator StopNoTypeTalking(PhysicalSpeaker p)
+    {
+        yield return new WaitForSeconds(1.5f);
+        p.speaker.GetComponent<Animator>().SetBool("talking", false);
+    }
+
+    /*public void SetDialogueTags(string[] info)
     {
         foreach(string s in info)
         {
-            switch(s)
+            switch (s)
             {
                 case "Shake":
                     textShake.Shake();
@@ -145,6 +201,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                     textShake.TempShake();
                     break;
                 case "NoType":
+                    noType = true;
                     dialogueUI.textSpeed = 0;
                     break;
                 case "Red":
@@ -155,20 +212,17 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                     break;
                 case "Small":
                     textParent.transform.localScale = new Vector3(.7f, .7f, 1f);
-                    print("tag");
                     break;
                 case "Big":
                     textParent.transform.localScale = new Vector3(1.4f, 1.4f, 1f);
-                    print("tag");
                     break;
                 case "Huge":
                     textParent.transform.localScale = new Vector3(1.8f, 1.8f, 1f);
-                    print("tag");
                     break;
 
             }
         }
-    }
+    }*/
 
     public void SetAutoAdvance(string[] info)
     {
@@ -189,11 +243,14 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     public void StopDialogTags()
     {
+        if(stopTalk != null) { StopCoroutine(stopTalk); }
+        noType = false;
         textShake.StopShake();
         dialogueUI.textSpeed = .025f;
         text.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
         text.GetComponent<Animator>().SetBool("bold", false);
         textParent.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
+
     }
 
     #region Choice Management

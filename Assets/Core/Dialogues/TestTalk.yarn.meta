@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: 172cfcade85e84b49a147a7bcab37e31
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - TestTalk-Test.Start-0
+  - TestTalk-Test.Start-1
+  - TestTalk-Test.Start-2
+  - TestTalk-Test.Start-3
+  - TestTalk-Test.Start-4
+  - TestTalk-Test.Start-5
+  - TestTalk-Test.Blue-6
+  - TestTalk-Test.Blue-7
+  - TestTalk-Test.Blue-8
+  - TestTalk-Test.Anger-9
+  - TestTalk-Test.Anger-10
+  - TestTalk-Test.Anger-11
+  - TestTalk-Test.PlayerDeath-12
+  - TestTalk-Test.BreakingPointAnger-13
+  - TestTalk-Test.BreakingPointAnger-14
+  - TestTalk-Test.DontCommitSuicide-15
+  - TestTalk-Test.DontCommitSuicide-16
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []
