@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         }
         patients[currentPatient].gameObject.SetActive(false);
         currentPatient++;
+        SoundManager.instance.GameplaySound.setParameterByName("Progress", currentPatient);
 
         initalizePatient();
     }

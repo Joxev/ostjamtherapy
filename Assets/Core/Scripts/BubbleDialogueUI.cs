@@ -212,10 +212,8 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         int index = 0;
         foreach (string s in info)
         {
-            print("super");
             if (index > 1)
             {
-                print("Ah");
                 switch (s)
                 {
                     case "Shake":

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.01.00">
 	<object class="Workspace" id="{35214c53-3681-4831-bd6b-bd84eaff8692}">
+		<property name="builtBanksOutputDirectory" />
+		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{bb6e895d-da1a-4044-a9f7-1611a0e3fb7c}</destination>
 		</relationship>
@@ -30,6 +32,7 @@
 		</relationship>
 		<relationship name="platforms">
 			<destination>{c44e6a1b-b074-4bbd-8a40-b55f4db408c1}</destination>
+			<destination>{61dd3e05-a0f6-45e8-9dfd-a00b327dbdb2}</destination>
 		</relationship>
 	</object>
 </objects>

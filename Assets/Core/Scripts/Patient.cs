@@ -7,6 +7,7 @@ using System;
 
 public class Patient : MonoBehaviour
 {
+
     public string patientName;
 
     [Header("Dialogs")]
@@ -33,15 +34,16 @@ public class Patient : MonoBehaviour
     int currentSadness;
     int currentAnger;
 
-
     public void setCurrentSadness(int value)
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Sadness", value);
         currentSadness = value;
         updateAnimations();
         BubbleDialogueUI.instance.dialogueRunner.GetComponent<InMemoryVariableStorage>().SetValue("sadness", value);
     }
     public void setCurrentAnger(int value)
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Anger", value);
         currentAnger = value;
         updateAnimations();
         BubbleDialogueUI.instance.dialogueRunner.GetComponent<InMemoryVariableStorage>().SetValue("anger", value);
@@ -89,7 +91,6 @@ public class Patient : MonoBehaviour
             case "Sadness":
                 setCurrentSadness(currentSadness + Int32.Parse(info[1]));
                 break;
-
         }
     }
 
