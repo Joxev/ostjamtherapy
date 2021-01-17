@@ -5,4 +5,5 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public Transform textPoint;
+    public Transform focusPoint;
 }

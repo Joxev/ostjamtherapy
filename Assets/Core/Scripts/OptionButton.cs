@@ -20,7 +20,19 @@ public class OptionButton : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
     }
     public void onClicked()
     {
-        TextMeshProUGUI t = Instantiate(clickPrefab, transform.position, transform.rotation, canvas.transform).GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI t = Instantiate(clickPrefab, transform.position, transform.rotation, recursiveParent(transform)).GetComponent<TextMeshProUGUI>();
         t.text = buttonText.text.ToString();
+    }
+
+    public Transform recursiveParent(Transform currentTransform)
+    {
+        if(currentTransform.parent.GetComponent<CanvasGroup>() != null)
+        {
+            return currentTransform.parent;
+        }
+        else
+        {
+            return recursiveParent(currentTransform.parent);
+        }
     }
 }

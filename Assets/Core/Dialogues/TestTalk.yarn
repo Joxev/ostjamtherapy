@@ -3,12 +3,12 @@ tags:
 colorID: 0
 position: 116,-85
 ---
-<<SetSpeaker Max Neutral Red TempShake>>
+<<SetSpeaker Max Sad>>
 Hi!
-<<SetSpeaker Jack Happy Red TempShake>>
+<<SetSpeaker Jack Sad>>
 What color do you like?
 -> Red
-    <<SetSpeaker Jack Happy>> 
+    <<SetSpeaker Jack Happy>>
     Pretty Cool!
 -> Blue
     <<SetSpeaker Jack Sad>> 
@@ -35,6 +35,7 @@ position: 383,-84
 ---
 << SetSpeaker Jack Sad>> 
 I am so angry
+<< TargetZoom Max 3>> 
 << SetSpeaker Jack Sad>> 
 [[ Commit Suicide |Test.PlayerDeath]]
 [[ Dont Commit Suicide |Test.DontCommitSuicide]]
@@ -64,6 +65,7 @@ tags:
 colorID: 0
 position: 376,-336
 ---
+<< TargetZoom Reset>> 
 << SetSpeaker Jack Neutral>> 
 Fine Ill Forgive you!
 << SetSpeaker Jack Neutral>> 

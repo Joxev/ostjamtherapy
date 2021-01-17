@@ -23,10 +23,16 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
     }
     public List<PhysicalSpeaker> physicalSpeakers = new List<PhysicalSpeaker>();
 
+    public PhysicalSpeaker currentSpeaker;
+
     public DialogueRunner dialogueRunner;
     public DialogueUI dialogueUI;
+
     public GameObject text;
     public GameObject textParent;
+
+    public Transform optionsPoint;
+    public Transform options;
 
     public bool canContinue;
 
@@ -44,6 +50,9 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
 
     private Coroutine stopTalk;
 
+    float defaultCameraSize;
+    Vector3 defaultCameraPosition;
+
 
     private void Awake()
     {
@@ -56,10 +65,14 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         dialogueRunner.AddCommandHandler("SetPortrait", SetSpeakerPortrait);
         //dialogueRunner.AddCommandHandler("SetTags", SetDialogueTags);
         dialogueRunner.AddCommandHandler("AutoAdvance", SetAutoAdvance);
+        dialogueRunner.AddCommandHandler("TargetZoom", TargetZoom);
     }
 
     private void Start()
     {
+        defaultCameraSize = Camera.main.orthographicSize;
+        defaultCameraPosition = Camera.main.transform.position;
+
         canContinue = true;
     }
 
@@ -72,6 +85,9 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                 dialogueUI.MarkLineComplete();
             }
         }
+
+        textParent.transform.position = Camera.main.WorldToScreenPoint(currentSpeaker.speaker.GetComponent<Character>().textPoint.position);
+        options.transform.position = Camera.main.WorldToScreenPoint(optionsPoint.position);
     }
 
     //
@@ -95,6 +111,63 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
     }
 
     //
+    public void TargetZoom(string[] info)
+    {
+        if(!info[0].Equals("Reset"))
+        {
+            string target = info[0];
+            int zoom = Int32.Parse(info[1]);
+
+            PhysicalSpeaker targetSpeaker = new PhysicalSpeaker();
+
+            if (speakerDatabase.TryGetValue(target, out SpeakerData data))
+            {
+                foreach (PhysicalSpeaker p in physicalSpeakers)
+                {
+                    if (p.speakerData == data)
+                    {
+                        targetSpeaker = p;
+                    }
+                }
+            }
+
+            SetFocus(zoom, targetSpeaker.speaker.GetComponent<Character>().focusPoint.position);
+        }
+        else
+        {
+            SetFocus(defaultCameraSize, defaultCameraPosition);
+            //virtualCamera.transform.position = new Vector3(0, 0, virtualCamera.transform.position.z);
+        }
+    }
+
+    Coroutine zoomSize;
+    float desiredSize;
+
+    Vector3 cameraDesiredPosition;
+    public void SetFocus(float size, Vector3 position)
+    {
+        float preSize = defaultCameraSize;
+        desiredSize = size;
+
+        Vector3 prePos = transform.position;
+        cameraDesiredPosition = position;
+
+        zoomSize = StartCoroutine(zoomS(0.35f));
+    }
+    IEnumerator zoomS(float time)
+    {
+        float elapsedTime = 0;
+        float startSize = Camera.main.orthographicSize;
+        Vector3 startPos = Camera.main.transform.position;
+
+        while(Camera.main.orthographicSize != desiredSize && Camera.main.transform.position != cameraDesiredPosition)
+        {
+            Camera.main.transform.position = Vector3.Lerp(startPos, new Vector3( cameraDesiredPosition.x , cameraDesiredPosition.y, startPos.z), elapsedTime / time);
+            Camera.main.orthographicSize = Mathf.Lerp(startSize, desiredSize, elapsedTime / time);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 
     public void SetSpeakerPortrait(string[] info)
     {
@@ -120,7 +193,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         string speaker = info[0];
         string emotion = info[1];
 
-        PhysicalSpeaker physicalSpeaker = new PhysicalSpeaker();
+        currentSpeaker = new PhysicalSpeaker();
 
         if (speakerDatabase.TryGetValue(speaker, out SpeakerData data))
         {
@@ -128,12 +201,12 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
             {
                 if (p.speakerData == data)
                 {
-                    physicalSpeaker = p;
+                    currentSpeaker = p;
                 }
             }
-            physicalSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
-            physicalSpeaker.speaker.GetComponent<Animator>().SetBool("talking", true);
-            textParent.transform.position = Camera.main.WorldToScreenPoint(physicalSpeaker.speaker.GetComponent<Character>().textPoint.position);
+            currentSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
+            currentSpeaker.speaker.GetComponent<Animator>().SetBool("talking", true);
+            textParent.transform.position = Camera.main.WorldToScreenPoint(currentSpeaker.speaker.GetComponent<Character>().textPoint.position);
         }
 
         int index = 0;
@@ -156,7 +229,6 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
                         dialogueUI.textSpeed = 0;
                         break;
                     case "Red":
-                        print("Sup nigga");
                         text.GetComponent<TextMeshProUGUI>().color = new Color32(214, 32, 15, 255);
                         break;
                     case "Bold":
@@ -178,7 +250,7 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
         }
         if (noType)
         {
-            stopTalk = StartCoroutine(StopNoTypeTalking(physicalSpeaker));
+            stopTalk = StartCoroutine(StopNoTypeTalking(currentSpeaker));
         }
     }
 
