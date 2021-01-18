@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637465027849386258
+  lastModified: 637465708248900142
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637465027849426372
+  lastModified: 637465708248940091
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: -9155318310324979592}
   StringsBanks:
   - {fileID: -6601434307850466603}
-  stringsBankWriteTime: 637465027849426372
+  stringsBankWriteTime: 637465708248940091
   cacheVersion: 6
 --- !u!114 &150895708714800348
 MonoBehaviour:
@@ -174,3 +174,25 @@ MonoBehaviour:
     data1: 3626216617
     data2: 1808165378
   Exists: 1
+--- !u!114 &7372682614598742738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/UI_Gameplay/SwitchPatient
+  m_EditorClassIdentifier: 
+  Path: event:/Game/UI_Gameplay/SwitchPatient
+  guid: 9ce26eb520394943b358bd95f19332e3
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10600

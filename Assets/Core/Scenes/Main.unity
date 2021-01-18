@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1784,7 +1784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774fb709c1d26994cabe2a8b8e076a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Game/Music/Music_Gameplay
+  GameplayEvent: event:/Game/Music/Music_Gameplay
+  SwitchPatientEvent: event:/Game/UI_Gameplay/SwitchPatient
 --- !u!4 &554397877
 Transform:
   m_ObjectHideFlags: 0

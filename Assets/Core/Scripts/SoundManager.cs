@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    public string Event;
+    public string GameplayEvent;
     public FMOD.Studio.EventInstance GameplaySound;
 
     private void Start()
     {
-        GameplaySound = FMODUnity.RuntimeManager.CreateInstance(Event);
+        GameplaySound = FMODUnity.RuntimeManager.CreateInstance(GameplayEvent);
         GameplaySound.start();
     }
-
 }
