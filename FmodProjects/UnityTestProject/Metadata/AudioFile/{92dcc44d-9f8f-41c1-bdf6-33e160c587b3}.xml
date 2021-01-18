@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{92dcc44d-9f8f-41c1-bdf6-33e160c587b3}">
+		<property name="assetPath">
+			<value>Gameplay/Speech/Neutral/Speech_Neutral_12.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.966530612244898</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
+		</relationship>
+	</object>
+</objects>

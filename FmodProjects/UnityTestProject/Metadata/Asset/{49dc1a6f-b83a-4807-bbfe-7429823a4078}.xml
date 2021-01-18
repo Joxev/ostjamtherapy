@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{49dc1a6f-b83a-4807-bbfe-7429823a4078}">
+		<property name="assetPath">
+			<value>Gameplay/Speech/Negative/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c8969c76-0b79-4868-afb5-d53cc40b4dcf}</destination>
+		</relationship>
+	</object>
+</objects>
