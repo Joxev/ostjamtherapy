@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: ee1d5bb13127d78499178390feb3dc9d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 72pt Soft
+  fontNames:
+  - Fraunces 72pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5b29723110bdcc04ab43d13ca0a7fcf3, type: 3}
+  - {fileID: 12800000, guid: 235499817cffc41438cb23a2d62f2e07, type: 3}
+  - {fileID: 12800000, guid: 9e847ce683eec544586fcd1c5714dcf7, type: 3}
+  - {fileID: 12800000, guid: 03b529d7b30f4ec48bd3e8949d97f590, type: 3}
+  - {fileID: 12800000, guid: 3e33b18839040e74e9ed978d6e218ded, type: 3}
+  - {fileID: 12800000, guid: cd50655956a30ae408445c855168fdaa, type: 3}
+  - {fileID: 12800000, guid: ab26a43b5d38dcc49814a79dbbd1805e, type: 3}
+  - {fileID: 12800000, guid: 18f352dc0cedd8b4f9ac8848a8e7b092, type: 3}
+  - {fileID: 12800000, guid: a64533bd1ede8d949a22626df4096cd7, type: 3}
+  - {fileID: 12800000, guid: 77c3fdff4bd364842b282df3455aaf64, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

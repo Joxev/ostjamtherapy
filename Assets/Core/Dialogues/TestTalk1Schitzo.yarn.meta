@@ -1,0 +1,55 @@
+fileFormatVersion: 2
+guid: d348b5594b14594428df1370a4a9d361
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - TestTalk1Schitzo-Test.Start-0
+  - TestTalk1Schitzo-Test.Start-1
+  - TestTalk1Schitzo-Test.Start-2
+  - TestTalk1Schitzo-Test.Start-3
+  - TestTalk1Schitzo-Test.Start-4
+  - TestTalk1Schitzo-Test.Start-5
+  - TestTalk1Schitzo-Test.Blue-6
+  - TestTalk1Schitzo-Test.Blue-7
+  - TestTalk1Schitzo-Test.Anger-8
+  - TestTalk1Schitzo-Test.Anger-9
+  - TestTalk1Schitzo-Test.Anger-10
+  - TestTalk1Schitzo-Test.PlayerDeath-11
+  - TestTalk1Schitzo-Test.BreakingPointAnger-12
+  - TestTalk1Schitzo-Test.BreakingPointAnger-13
+  - TestTalk1Schitzo-Test.DontCommitSuicide-14
+  - TestTalk1Schitzo-Test.DontCommitSuicide-15
+  - TestTalk1Schitzo-Schitzo.Start-16
+  - TestTalk1Schitzo-Schitzo.Start-17
+  - TestTalk1Schitzo-Schitzo.Start-18
+  - TestTalk1Schitzo-Schitzo.Anger-19
+  - TestTalk1Schitzo-Schitzo.Anger-20
+  - TestTalk1Schitzo-Schitzo.Anger-21
+  - TestTalk1Schitzo-Schitzo.Dialouge2-22
+  - TestTalk1Schitzo-Schitzo.Dialouge2-23
+  - TestTalk1Schitzo-Schitzo.Dialouge2-24
+  - TestTalk1Schitzo-Schitzo.Dialouge2-25
+  - TestTalk1Schitzo-Schitzo.Dialouge2-26
+  - TestTalk1Schitzo-Schitzo.Dialouge2-27
+  - TestTalk1Schitzo-Schitzo.Dialouge2-28
+  - TestTalk1Schitzo-Schitzo.Dialouge2-29
+  - TestTalk1Schitzo-Schitzo.Dialouge3-30
+  - TestTalk1Schitzo-Schitzo.Dialouge3-31
+  - TestTalk1Schitzo-Schitzo.BreakingPointAnger-32
+  - TestTalk1Schitzo-Schitzo.BreakingPointAnger-33
+  - TestTalk1Schitzo-Schitzo.PlayerDeath-34
+  - TestTalk1Schitzo-Schitzo.Dialouge4-35
+  - TestTalk1Schitzo-Schitzo.Dialouge4-36
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: d348b5594b14594428df1370a4a9d361,
+    type: 3}
+  localizations: []

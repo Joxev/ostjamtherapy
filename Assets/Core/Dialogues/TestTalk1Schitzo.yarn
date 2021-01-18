@@ -1,0 +1,176 @@
+title: Test.Start
+tags: 
+colorID: 0
+position: 565,-267
+---
+<<SetSpeaker Max Sad>>
+Hi!
+<<SetSpeaker Jack Sad>>
+What color do you like?
+-> Red
+    <<SetSpeaker Jack Happy>>
+    Pretty Cool!
+-> Blue
+    <<SetSpeaker Jack Sad>> 
+    How could you like blue!
+    << ChangeEmotionValues Anger 100>> 
+    [[ Test.Blue ]]
+===
+title: Test.Blue
+tags: 
+colorID: 0
+position: 560,19
+---
+<< CheckEmotionLevels>> 
+<< SetSpeaker Max Sad NoType Red TempShake>>
+I don't like blue
+<< SetSpeaker Max Sad NoType Red TempShake>>
+Blue is terrible
+<< PatientSuccess>>
+===
+title: Test.Anger
+tags: 
+colorID: 0
+position: 812,-262
+---
+<< SetSpeaker Jack Sad>> 
+I am so angry
+<< TargetZoom Max 5>> 
+<< SetSpeaker Jack Sad>> 
+[[ Commit Suicide |Test.PlayerDeath]]
+[[ Dont Commit Suicide |Test.DontCommitSuicide]]
+===
+title: Test.PlayerDeath
+tags: 
+colorID: 0
+position: 816,23
+---
+<< SetSpeaker Jack Sad>> 
+I am going to commit suicide
+<< PatientSuicide>>
+===
+title: Test.BreakingPointAnger
+tags: 
+colorID: 0
+position: 1116,-263
+---
+<< SetSpeaker Jack Sad Shake Red Large>>
+You have not helped me at all!
+<< SetSpeaker Jack Sad Shake Red Large>>
+Why did i even agree to do this!
+[[ Test.PlayerDeath ]]
+===
+title: Test.DontCommitSuicide
+tags: 
+colorID: 0
+position: 837,-514
+---
+<< TargetZoom Reset>> 
+<< SetSpeaker Jack Neutral>> 
+Fine Ill Forgive you!
+<< SetSpeaker Jack Neutral>> 
+What were we talking about again?
+<< ChangeEmotionValues Anger -30>> 
+<< ResumeDialog>>
+===
+title: Schitzo.Start
+tags: 
+colorID: 0
+position: -365,-461
+---
+<< SetSpeaker Therapist Neutral>>
+So tell me, How have you been doing?
+<< SetSpeaker Schitzo Neutral>>
+I.. im doing okay.
+<< SetSpeaker Therapist Neutral>>
+Would you like to expand upon that?
+<< ChangeEmotionValues Anger 60>>
+[[Schitzo.Dialouge2]]
+===
+title: Schitzo.Anger
+tags: 
+colorID: 0
+position: -117,-328
+---
+<< SetSpeaker Therapist Neutral>>
+<< TargetZoom Therapist 3>>
+-> Please dont hurt me, i have a family
+    << ChangeEmotionValues Anger -80>>
+    << TargetZoom Reset>>
+    << SetSpeaker Schitzo Neutral>>
+    Ok i forgive you.
+    << ResumeDialog>> 
+-> You cant do that! You would go to jail!
+    [[ Schitzo.PlayerDeath]]
+===
+title: Schitzo.Dialouge2
+tags: 
+colorID: 0
+position: -369,-245
+---
+<< CheckEmotionLevels>> 
+<< SetSpeaker Schitzo Neutral>>
+No.
+<< SetSpeaker Therapist Neutral>>
+Ok ok i apologize.
+<< ChangeEmotionValues Anger -40>>
+<< SetSpeaker Therapist Neutral>>
+So where were we. 
+<< SetSpeaker Therapist Neutral>>
+-> Ah yes how is you're family doing?
+    << SetSpeaker Schitzo Neutral>>
+    They are good we.. i like talking to them alot!
+-> Have you been experiencing any breakdowns recently?
+    << ChangeEmotionValues Anger 60>>
+    << SetSpeaker Schitzo Neutral NoType Red TempShake>>
+    I said i dont want to talk about that!
+    << SetSpeaker Therapist Neutral>>
+    Alright so sorry.
+[[Schitzo.Dialouge3]]
+===
+title: Schitzo.Dialouge3
+tags: 
+colorID: 0
+position: -372,-25
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Therapist Neutral>>
+Are you sure those people you talk to are even real?
+<< ChangeEmotionValues Anger 100>>
+<< SetSpeaker Schitzo Neutral>>
+I could kill you right now!
+[[Schitzo.Dialouge4]]
+===
+title: Schitzo.BreakingPointAnger
+tags: 
+colorID: 0
+position: 107,-82
+---
+<< SetSpeaker Jack Sad Shake Red Large>>
+You have not helped me at all!
+<< SetSpeaker Jack Sad Shake Red Large>>
+Why did i even agree to do this!
+[[ Schitzo.PlayerDeath ]]
+===
+title: Schitzo.PlayerDeath
+tags: 
+colorID: 0
+position: -106,207
+---
+<< TargetZoom Reset>>
+<< SetSpeaker Schitzo Neutral>>
+I will kill you for that, You're Dead!
+<< PatientSuicide>>
+===
+title: Schitzo.Dialouge4
+tags: 
+colorID: 0
+position: -378,199
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Schitzo Neutral>>
+I'm sorry sir i didn't mean it!
+<< SetSpeaker Therapist Neutral>>
+<< PatientSuccess>>
+test
+===

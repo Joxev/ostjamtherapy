@@ -5,70 +5,68 @@ using UnityEngine.UI;
 
 public class CircularMenu : MonoBehaviour
 {
-    public List<MenuButton> buttons = new List<MenuButton>();
-    private Vector2 MousePosition;
-    private Vector2 fromVector2M = new Vector2(0.5f, 1.0f);
-    private Vector2 centerCircle = new Vector2(0.5f, 0.5f);
-    private Vector2 toVector2M;
+    public Transform textPointHolder;
 
-    public int menuItems;
-    public int currentMenuItem;
-    private int oldMenuItem;
+    float value = 1;
+
+    public bool isHover = false;
+
+    public bool hasClicked = false;
+
+    [HideInInspector] public float targetRotation;
+
+    public GameObject carrotUi;
 
     private void Start()
     {
-        menuItems = buttons.Count;
-        foreach(MenuButton button in buttons)
-        {
-            button.sceneImage.color = button.NormalColor;
-        }
-        currentMenuItem = 0;
-        oldMenuItem = 0;
+        carrotUi.SetActive(false);
     }
 
     private void Update()
     {
-        GetCurrentMenuItem();
-        if(Input.GetButtonDown("Fire1"))
+        if (hasClicked)
         {
-            ButtonAction();
+            if(Mathf.Abs(textPointHolder.transform.rotation.z - 180 - targetRotation) > 10)
+            {
+                if(textPointHolder.transform.rotation.z - 180 > targetRotation)
+                {
+                    value += 0.3f;
+                }
+                else
+                {
+                    value -= 0.3f;
+                }
+            }
+            else
+            {
+                carrotUi.SetActive(true);
+            }
+        }
+        else if(!isHover)
+        {
+            if (value > 360)
+            {
+                value = 0;
+            }
+            else
+            {
+                value += 0.03f;
+            }
+        }
+        else
+        {
+            value += Mathf.Sin(Time.time) * 0.003f;
+        }
+        textPointHolder.transform.rotation = Quaternion.Euler(textPointHolder.transform.rotation.x, textPointHolder.transform.rotation.y, value);
+    }
+
+    public void onClick(float targetRot)
+    {
+        if(!hasClicked)
+        {
+            targetRotation = targetRot;
+            hasClicked = true;
         }
     }
-
-    public void GetCurrentMenuItem()
-    {
-        MousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-        toVector2M = new Vector2(MousePosition.x / Screen.width, MousePosition.y / Screen.height);
-
-        float angle = (Mathf.Atan2(fromVector2M.y - centerCircle.y, fromVector2M.x - centerCircle.x) - Mathf.Atan2(toVector2M.y - centerCircle.y, toVector2M.x - centerCircle.x)) * Mathf.Rad2Deg;
-
-        if (angle < 0) { angle += 360; }
-
-        currentMenuItem = (int) (angle / (360 / menuItems));
-
-        if(currentMenuItem != oldMenuItem)
-        {
-            buttons[oldMenuItem].sceneImage.color = buttons[oldMenuItem].NormalColor;
-            oldMenuItem = currentMenuItem;
-            buttons[currentMenuItem].sceneImage.color = buttons[currentMenuItem].HighlightedColor;
-        }
-    }
-
-    public void ButtonAction()
-    {
-        buttons[currentMenuItem].sceneImage.color = buttons[currentMenuItem].PressedColor;
-    }
 }
-
-[System.Serializable]
-public class MenuButton
-{
-    public string name;
-    public Image sceneImage;
-    public Color NormalColor = Color.white;
-    public Color HighlightedColor = Color.grey;
-    public Color PressedColor = Color.gray;
-}
-
 

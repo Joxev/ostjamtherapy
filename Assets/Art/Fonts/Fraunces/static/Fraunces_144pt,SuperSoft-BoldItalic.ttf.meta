@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5067430a6a618ca47ab4ab8bec4309fb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 144pt Soft
+  fontNames:
+  - Fraunces 144pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 50b1e913a9d480743a3edec5d05ab269, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

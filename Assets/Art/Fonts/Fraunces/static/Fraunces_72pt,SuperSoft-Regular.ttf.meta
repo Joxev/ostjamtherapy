@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 77c3fdff4bd364842b282df3455aaf64
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 72pt Soft
+  fontNames:
+  - Fraunces 72pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 235499817cffc41438cb23a2d62f2e07, type: 3}
+  - {fileID: 12800000, guid: 03b529d7b30f4ec48bd3e8949d97f590, type: 3}
+  - {fileID: 12800000, guid: a64533bd1ede8d949a22626df4096cd7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

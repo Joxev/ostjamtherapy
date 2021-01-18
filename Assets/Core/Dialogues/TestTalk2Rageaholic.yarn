@@ -1,0 +1,101 @@
+title: Rageaholic.Start
+tags: 
+colorID: 0
+position: -365,-461
+---
+<< SetSpeaker Therapist Neutral>>
+So tell me, How have you been doing?
+<< SetSpeaker Rageaholic Neutral>>
+I.. im doing okay.
+<< SetSpeaker Therapist Neutral>>
+Would you like to expand upon that?
+<< ChangeEmotionValues Anger 60>>
+[[Rageaholic.Dialouge2]]
+===
+title: Rageaholic.Anger
+tags: 
+colorID: 0
+position: -117,-328
+---
+<< SetSpeaker Therapist Neutral>>
+<< TargetZoom Therapist 5>>
+-> Please dont hurt me, i have a family
+    << ChangeEmotionValues Anger -80>>
+    << TargetZoom Reset>>
+    << SetSpeaker Rageaholic Neutral>>
+    Ok i forgive you.
+    << ResumeDialog>> 
+-> You cant do that! You would go to jail!
+    [[ Rageaholic.PlayerDeath]]
+===
+title: Rageaholic.Dialouge2
+tags: 
+colorID: 0
+position: -369,-245
+---
+<< CheckEmotionLevels>> 
+<< SetSpeaker Rageaholic Neutral>>
+No.
+<< SetSpeaker Therapist Neutral>>
+Ok ok i apologize.
+<< ChangeEmotionValues Anger -40>>
+<< SetSpeaker Therapist Neutral>>
+So where were we. 
+<< SetSpeaker Therapist Neutral>>
+-> Ah yes how is you're family doing?
+    << SetSpeaker Rageaholic Neutral>>
+    They are good we.. i like talking to them alot!
+-> Have you been experiencing any breakdowns recently?
+    << ChangeEmotionValues Anger 60>>
+    << SetSpeaker Rageaholic Neutral NoType Red TempShake>>
+    I said i dont want to talk about that!
+    << SetSpeaker Therapist Neutral>>
+    Alright so sorry.
+[[Rageaholic.Dialouge3]]
+===
+title: Rageaholic.Dialouge3
+tags: 
+colorID: 0
+position: -372,-25
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Therapist Neutral>>
+Are you sure those people you talk to are even real?
+<< ChangeEmotionValues Anger 100>>
+<< SetSpeaker Rageaholic Neutral>>
+I could kill you right now!
+[[Rageaholic.Dialouge4]]
+===
+title: Rageaholic.BreakingPointAnger
+tags: 
+colorID: 0
+position: 107,-82
+---
+<< SetSpeaker Rageaholic Sad Shake Red Large>>
+You have not helped me at all!
+<< SetSpeaker Rageaholic Sad Shake Red Large>>
+Why did i even agree to do this!
+[[ Rageaholic.PlayerDeath ]]
+===
+title: Rageaholic.PlayerDeath
+tags: 
+colorID: 0
+position: -106,207
+---
+<< TargetZoom Reset>>
+<< SetSpeaker Rageaholic Neutral>>
+I will kill you for that, You're Dead!
+<< PatientSuicide>>
+===
+title: Rageaholic.Dialouge4
+tags: 
+colorID: 0
+position: -378,199
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Rageaholic Neutral>>
+I'm sorry sir i didn't mean it!
+<< SetSpeaker Therapist Neutral>>
+<< PatientSuccess>>
+test
+===

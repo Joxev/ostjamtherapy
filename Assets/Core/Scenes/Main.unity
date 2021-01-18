@@ -945,7 +945,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1376,7 +1376,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1584,9 +1584,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicalSpeakers:
   - speaker: {fileID: 2052067046}
-    speakerData: {fileID: 11400000, guid: a70438b52c2327749966547ea27da6b2, type: 2}
+    speakerData: {fileID: 11400000, guid: bb29ea4c0d9253b4d96153b004759444, type: 2}
   - speaker: {fileID: 2069081470}
-    speakerData: {fileID: 11400000, guid: 867c16a4689d9e64baa757f1821251e9, type: 2}
+    speakerData: {fileID: 11400000, guid: 34b1f1497b9d00d4d9b99f9259b925e6, type: 2}
+  - speaker: {fileID: 999813388}
+    speakerData: {fileID: 11400000, guid: b76d3fedb5353e5418b277613980ff9e, type: 2}
   currentSpeaker:
     speaker: {fileID: 0}
     speakerData: {fileID: 0}
@@ -1598,8 +1600,9 @@ MonoBehaviour:
   options: {fileID: 1012401656}
   canContinue: 1
   speakers:
-  - {fileID: 11400000, guid: a70438b52c2327749966547ea27da6b2, type: 2}
-  - {fileID: 11400000, guid: 867c16a4689d9e64baa757f1821251e9, type: 2}
+  - {fileID: 11400000, guid: bb29ea4c0d9253b4d96153b004759444, type: 2}
+  - {fileID: 11400000, guid: 34b1f1497b9d00d4d9b99f9259b925e6, type: 2}
+  - {fileID: 11400000, guid: b76d3fedb5353e5418b277613980ff9e, type: 2}
   textShake: {fileID: 218670793}
   autoAdvanceTime: 1.5
 --- !u!224 &454997615
@@ -1742,6 +1745,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 872945359}
+  - {fileID: 894644138}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1908,7 +1912,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1977,7 +1981,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641061922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9780204, y: -0.3903244, z: 2.490337}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2100130978}
@@ -1999,7 +2003,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: f60bc020cde1a17448151cc95ec09003, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a947077b3dd82994e95c11cb514913c9, type: 2}
 --- !u!1 &781747731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2135,6 +2139,8 @@ MonoBehaviour:
   - {fileID: 999813390}
   normalPostProcessing: {fileID: 2101671172}
   deathPostProcessing: {fileID: 641061922}
+  transitionUI: {fileID: 894644139}
+  fadeInTime: 0.1
 --- !u!1 &854905677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2257,93 @@ CanvasGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872945358}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!1 &894644137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894644138}
+  - component: {fileID: 894644140}
+  - component: {fileID: 894644139}
+  - component: {fileID: 894644141}
+  m_Layer: 5
+  m_Name: Transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &894644138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894644137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 551840191}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &894644139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894644137}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &894644140
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894644137}
+  m_CullTransparentMesh: 0
+--- !u!225 &894644141
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894644137}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
@@ -2518,7 +2611,7 @@ GameObject:
   - component: {fileID: 999813391}
   - component: {fileID: 999813390}
   m_Layer: 0
-  m_Name: Patient (1)
+  m_Name: PatientRageaholic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2551,14 +2644,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da3c9ace9990bb4ba1685b21f479aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patientName: Test
-  yarnDialog: {fileID: 2480198943629176163, guid: 95488ab8919334143b57ec402b1c5e9b,
+  patientName: Rageaholic
+  yarnDialog: {fileID: 2480198943629176163, guid: 556c77cfce5a81a408f515df0b0f6046,
     type: 3}
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
   suicideStartNode: 
-  playerDeathStartNode: 
+  playerDeathStartNode: BreakingPointAnger
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
@@ -2573,7 +2666,7 @@ Animator:
   m_GameObject: {fileID: 999813388}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1ce960c0e09a684f8701dce215cc6ae, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e9eadbbbac0a4b4b901518f14d17ff2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2614,7 +2707,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2635,7 +2728,8 @@ SpriteRenderer:
   m_SortingLayerID: 668906609
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf3657b723a228548bc481039893c009, type: 3}
+  m_Sprite: {fileID: 2444869976017092238, guid: ac1fb44eada79b648b3ec8e53e0056d5,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2795,7 +2889,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3397,7 +3491,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4587,7 +4681,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 14
   m_fontSizeMax: 14
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4640,7 +4734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1945159495}
-  - component: {fileID: 1945159496}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -4662,18 +4755,6 @@ Transform:
   m_Father: {fileID: 238766360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1945159496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945159494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ed202f8e13025d41be9a3c6b895f977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1962421699
 GameObject:
   m_ObjectHideFlags: 0
@@ -5048,7 +5129,7 @@ GameObject:
   - component: {fileID: 2069081475}
   - component: {fileID: 2069081476}
   m_Layer: 0
-  m_Name: Patient
+  m_Name: PatientSchitzo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5165,8 +5246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da3c9ace9990bb4ba1685b21f479aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patientName: Test
-  yarnDialog: {fileID: 2480198943629176163, guid: 172cfcade85e84b49a147a7bcab37e31,
+  patientName: Schitzo
+  yarnDialog: {fileID: 2480198943629176163, guid: d348b5594b14594428df1370a4a9d361,
     type: 3}
   yarnStartNode: Start
   angerStartNode: Anger

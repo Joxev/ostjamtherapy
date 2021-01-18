@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +15,13 @@ public class GameManager : MonoBehaviour
     public GameObject normalPostProcessing;
     public GameObject deathPostProcessing;
 
+    public Image transitionUI;
+
+    public float fadeInTime = 0.1f;
+
     private void Start()
     {
+        transitionUI.enabled = false;
         foreach(Patient p in patients)
         {
             if(p.gameObject.activeSelf)
@@ -25,9 +32,9 @@ public class GameManager : MonoBehaviour
         deathPostProcessing.SetActive(false);
         normalPostProcessing.SetActive(true);
 
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("PatientSuccess", patientSuccess);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("PatientSuicide", patientSuicide);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("PlayerDeath", playerDeath);
-        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("PatientSuccess", patientSuccess);
 
         initalizePatient();
     }
@@ -36,7 +43,7 @@ public class GameManager : MonoBehaviour
         patients[currentPatient].gameObject.SetActive(true);
         patients[currentPatient].initalizePatient();
     }
-
+    Coroutine nextP;
     public void nextPatient()
     {
         if(currentPatient >= patients.Count)
@@ -44,19 +51,29 @@ public class GameManager : MonoBehaviour
             //Game Over
             return;
         }
-        patients[currentPatient].gameObject.SetActive(false);
-        currentPatient++;
-        SoundManager.instance.GameplaySound.setParameterByName("Progress", currentPatient);
-
-        initalizePatient();
+        nextP = StartCoroutine(nextPatientWait());
     }
     public void patientSuccess(string[] info)
     {
-
+        patientEnd();
+        nextPatient();
     }
     public void patientSuicide(string[] info)
     {
+        patientEnd();
         StartCoroutine(deathWait());
+    }
+    public void playerDeath(string[] info)
+    {
+        patientEnd();
+        deathPostProcessing.SetActive(true);
+        normalPostProcessing.SetActive(false);
+        //GameOver
+    }
+    public void patientEnd()
+    {
+        BubbleDialogueUI.instance.text.GetComponent<TextMeshProUGUI>().text = "";
+        BubbleDialogueUI.instance.dialogueRunner.Stop();
     }
     IEnumerator deathWait()
     {
@@ -77,13 +94,24 @@ public class GameManager : MonoBehaviour
             normalPostProcessing.SetActive(true);
         }
     }
-
-    public void playerDeath(string[] info)
+    IEnumerator nextPatientWait()
     {
-        deathPostProcessing.SetActive(true);
-        normalPostProcessing.SetActive(false);
-        //GameOver
+        transitionUI.enabled = true;
+        yield return new WaitForSeconds(1f);
+
+        patients[currentPatient].gameObject.SetActive(false);
+        currentPatient++;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Progress", currentPatient);
+
+        initalizePatient();
+
+        yield return new WaitForSeconds(1f);
+
+        while (transitionUI.GetComponent<CanvasGroup>().alpha > 0)
+        {
+            transitionUI.GetComponent<CanvasGroup>().alpha -= Time.deltaTime;
+            yield return null;
+        }
+        transitionUI.enabled = false;
     }
-
-
 }

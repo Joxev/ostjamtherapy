@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: ac420b66ecc842740bb4bd80a46004e8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 144pt
+  fontNames:
+  - Fraunces 144pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 58e35222f43f70f438ae2f7a1d24b250, type: 3}
+  - {fileID: 12800000, guid: e763b614753e0b84e8e724d10d336dd3, type: 3}
+  - {fileID: 12800000, guid: f02def86ac1a2a346bc41ae465bf52b9, type: 3}
+  - {fileID: 12800000, guid: c6d474b6c566f634ab1e43c762884b77, type: 3}
+  - {fileID: 12800000, guid: e9bf8e3837edc2f4a8e8a805171797a5, type: 3}
+  - {fileID: 12800000, guid: b7fdf7d85d577f545a43bb4e263096c6, type: 3}
+  - {fileID: 12800000, guid: 9268aad9e691230479344d7e75f3b74f, type: 3}
+  - {fileID: 12800000, guid: 37113e6a399d2da4099415255bcd0d3c, type: 3}
+  - {fileID: 12800000, guid: 91cfa5cc3fd4b8640bad68367b43fee1, type: 3}
+  - {fileID: 12800000, guid: f0129abd61652d84a8617f54dc7de184, type: 3}
+  - {fileID: 12800000, guid: c2570c3eacecbde4cb9ac66885ebb5de, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

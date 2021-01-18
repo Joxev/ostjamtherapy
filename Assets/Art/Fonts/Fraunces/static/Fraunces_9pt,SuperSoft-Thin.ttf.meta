@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 716365a6c7c3cc940a4216bb97f2e135
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 9pt Soft
+  fontNames:
+  - Fraunces 9pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0136e1675f643f040a3611eea626ac7f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

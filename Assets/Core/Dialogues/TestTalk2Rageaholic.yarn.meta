@@ -1,0 +1,55 @@
+fileFormatVersion: 2
+guid: 556c77cfce5a81a408f515df0b0f6046
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - TestTalk2Rageaholic-Test.Start-0
+  - TestTalk2Rageaholic-Test.Start-1
+  - TestTalk2Rageaholic-Test.Start-2
+  - TestTalk2Rageaholic-Test.Start-3
+  - TestTalk2Rageaholic-Test.Start-4
+  - TestTalk2Rageaholic-Test.Start-5
+  - TestTalk2Rageaholic-Test.Blue-6
+  - TestTalk2Rageaholic-Test.Blue-7
+  - TestTalk2Rageaholic-Test.Anger-8
+  - TestTalk2Rageaholic-Test.Anger-9
+  - TestTalk2Rageaholic-Test.Anger-10
+  - TestTalk2Rageaholic-Test.PlayerDeath-11
+  - TestTalk2Rageaholic-Test.BreakingPointAnger-12
+  - TestTalk2Rageaholic-Test.BreakingPointAnger-13
+  - TestTalk2Rageaholic-Test.DontCommitSuicide-14
+  - TestTalk2Rageaholic-Test.DontCommitSuicide-15
+  - TestTalk2Rageaholic-Schitzo.Start-16
+  - TestTalk2Rageaholic-Schitzo.Start-17
+  - TestTalk2Rageaholic-Schitzo.Start-18
+  - TestTalk2Rageaholic-Schitzo.Anger-19
+  - TestTalk2Rageaholic-Schitzo.Anger-20
+  - TestTalk2Rageaholic-Schitzo.Anger-21
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-22
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-23
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-24
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-25
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-26
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-27
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-28
+  - TestTalk2Rageaholic-Schitzo.Dialouge2-29
+  - TestTalk2Rageaholic-Schitzo.Dialouge3-30
+  - TestTalk2Rageaholic-Schitzo.Dialouge3-31
+  - TestTalk2Rageaholic-Schitzo.BreakingPointAnger-32
+  - TestTalk2Rageaholic-Schitzo.BreakingPointAnger-33
+  - TestTalk2Rageaholic-Schitzo.PlayerDeath-34
+  - TestTalk2Rageaholic-Schitzo.Dialouge4-35
+  - TestTalk2Rageaholic-Schitzo.Dialouge4-36
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 556c77cfce5a81a408f515df0b0f6046,
+    type: 3}
+  localizations: []
