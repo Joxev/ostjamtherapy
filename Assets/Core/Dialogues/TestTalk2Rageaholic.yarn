@@ -18,7 +18,7 @@ colorID: 0
 position: -117,-328
 ---
 << SetSpeaker Therapist Neutral>>
-<< TargetZoom Therapist 5>>
+<< TargetZoom Therapist 6>>
 -> Please dont hurt me, i have a family
     << ChangeEmotionValues Anger -80>>
     << TargetZoom Reset>>

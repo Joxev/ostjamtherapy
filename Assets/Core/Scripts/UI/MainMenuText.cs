@@ -8,6 +8,7 @@ public class MainMenuText : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
 {
     public CircularMenu CM;
     public Transform point;
+    bool clicked = false;
 
     public float topRotation;
 
@@ -19,11 +20,12 @@ public class MainMenuText : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
     public void OnPointerExit(PointerEventData eventData)
     {
         CM.isHover = false;
-        GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+        if (!clicked) { GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal; }
     }
 
     public void OnClick()
     {
+        clicked = true;
         CM.onClick(topRotation);
     }
 

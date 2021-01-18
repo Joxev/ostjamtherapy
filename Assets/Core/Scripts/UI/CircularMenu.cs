@@ -13,7 +13,7 @@ public class CircularMenu : MonoBehaviour
 
     public bool hasClicked = false;
 
-    [HideInInspector] public float targetRotation;
+    public float targetRotation;
 
     public GameObject carrotUi;
 
@@ -26,9 +26,9 @@ public class CircularMenu : MonoBehaviour
     {
         if (hasClicked)
         {
-            if(Mathf.Abs(textPointHolder.transform.rotation.z - 180 - targetRotation) > 10)
+            if (Mathf.Abs(textPointHolder.transform.localEulerAngles.z - targetRotation) > 0.5f)
             {
-                if(textPointHolder.transform.rotation.z - 180 > targetRotation)
+                if(textPointHolder.transform.localEulerAngles.z < targetRotation)
                 {
                     value += 0.3f;
                 }
@@ -55,7 +55,7 @@ public class CircularMenu : MonoBehaviour
         }
         else
         {
-            value += Mathf.Sin(Time.time) * 0.003f;
+            value += Mathf.Sin(Time.time * 2) * 0.003f;
         }
         textPointHolder.transform.rotation = Quaternion.Euler(textPointHolder.transform.rotation.x, textPointHolder.transform.rotation.y, value);
     }

@@ -35,7 +35,7 @@ position: 812,-262
 ---
 << SetSpeaker Jack Sad>> 
 I am so angry
-<< TargetZoom Max 5>> 
+<< TargetZoom Max 6>> 
 << SetSpeaker Jack Sad>> 
 [[ Commit Suicide |Test.PlayerDeath]]
 [[ Dont Commit Suicide |Test.DontCommitSuicide]]
@@ -93,7 +93,7 @@ colorID: 0
 position: -117,-328
 ---
 << SetSpeaker Therapist Neutral>>
-<< TargetZoom Therapist 3>>
+<< TargetZoom Therapist 4>>
 -> Please dont hurt me, i have a family
     << ChangeEmotionValues Anger -80>>
     << TargetZoom Reset>>
