@@ -5,7 +5,7 @@
 			<value>Player_Death</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{eb9aa954-f6b9-4253-b988-32eabe402850}</destination>
@@ -33,6 +33,9 @@
 		</relationship>
 		<relationship name="parameters">
 			<destination>{58a31314-0cf7-4a73-8e1f-209e4b3498bc}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{0cca2aa7-d8f4-49ee-b3a1-195555df0553}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{ee38dd4a-29fa-45f8-939a-4fb4a69588cb}">
@@ -87,7 +90,11 @@
 			<destination>{ee38dd4a-29fa-45f8-939a-4fb4a69588cb}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{53e6bf57-dd14-48ee-9e5a-a19d0db6199a}" />
+	<object class="MultiSound" id="{53e6bf57-dd14-48ee-9e5a-a19d0db6199a}">
+		<relationship name="sounds">
+			<destination>{5d63e139-2b69-4b37-972b-82643f4e6a63}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{c2ac2318-8436-44c2-b1b7-6a55f6e5d1e1}">
 		<relationship name="effects">
 			<destination>{386e40f1-feb4-4313-a515-5f807dfef10e}</destination>
@@ -114,6 +121,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8f1c8dec-afc8-4e39-ad11-d5d82a142ef5}" />
+	<object class="SingleSound" id="{5d63e139-2b69-4b37-972b-82643f4e6a63}">
+		<relationship name="audioFile">
+			<destination>{95c94f62-f876-4eeb-99fd-f1f549b43840}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{386e40f1-feb4-4313-a515-5f807dfef10e}" />
 	<object class="MixerBusEffectChain" id="{c58f2c6d-58cc-4e7c-ad91-fe4ca51e02b2}">
 		<relationship name="effects">
