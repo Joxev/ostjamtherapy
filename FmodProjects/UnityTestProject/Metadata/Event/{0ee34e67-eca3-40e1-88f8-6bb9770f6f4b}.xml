@@ -5,7 +5,7 @@
 			<value>Yellow</value>
 		</property>
 		<property name="name">
-			<value>Music_Gameplay</value>
+			<value>Music_Gameplay_PlanB</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -45,9 +45,6 @@
 			<destination>{a084ea95-7886-4a9f-bf48-a26de6968673}</destination>
 			<destination>{c50ac41d-17e9-4b26-862d-22351be89c57}</destination>
 			<destination>{4c4fe2fd-1ff2-4ea4-ae6f-d79d9de0d80f}</destination>
-		</relationship>
-		<relationship name="banks">
-			<destination>{0cca2aa7-d8f4-49ee-b3a1-195555df0553}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{0094e4cf-f222-4cfc-b0b2-3a8aa7e2e3c4}">
