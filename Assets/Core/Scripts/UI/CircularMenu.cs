@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CircularMenu : MonoBehaviour
 {
     public Transform textPointHolder;
+
+    public int GameSceneIndex = 2;
+    public int CreditsSceneIndex = 3;
+    public int SettingsSceneIndex = 4;
 
     float value = 1;
 
@@ -17,8 +22,11 @@ public class CircularMenu : MonoBehaviour
 
     public GameObject carrotUi;
 
+    bool animDone = false;
+
     private void Start()
     {
+        animDone = false;
         carrotUi.SetActive(false);
     }
 
@@ -39,6 +47,7 @@ public class CircularMenu : MonoBehaviour
             }
             else
             {
+                animDone = true;
                 carrotUi.SetActive(true);
             }
         }
@@ -67,6 +76,39 @@ public class CircularMenu : MonoBehaviour
             targetRotation = targetRot;
             hasClicked = true;
         }
+    }
+
+    public void StartCredits()
+    {
+        //DontDestroyOnLoad(SoundManager.instance);
+        SceneManager.LoadScene(CreditsSceneIndex);
+    }
+    public void StartSettings()
+    {
+        SceneManager.LoadScene(SettingsSceneIndex);
+    }
+    public void StartGame()
+    {
+        StartCoroutine(startGameWait());
+    }
+    public void BackButton()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    IEnumerator startGameWait()
+    {
+        if (animDone)
+        {
+            SoundManager.instance.GameplaySound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            SceneManager.LoadScene(GameSceneIndex);
+        }
+        yield return null;
+        StartCoroutine(startGameWait());
     }
 }
 

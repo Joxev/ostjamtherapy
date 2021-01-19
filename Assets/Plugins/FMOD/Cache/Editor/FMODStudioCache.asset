@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637465970531583727
+  lastModified: 637466580430057085
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -54,11 +54,11 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637465970531593695
+  lastModified: 637466580430106951
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1150
+    Value: 1186
   Exists: 1
 --- !u!114 &-6546083826610525457
 MonoBehaviour:
@@ -175,6 +175,7 @@ MonoBehaviour:
   - {fileID: -968605735447243734}
   - {fileID: 3039997569474487590}
   - {fileID: -724331612724020828}
+  - {fileID: 9136357947281289930}
   EditorParameters:
   - {fileID: 4429799108867363786}
   - {fileID: -7028011608399550096}
@@ -183,7 +184,7 @@ MonoBehaviour:
   - {fileID: -9155318310324979592}
   StringsBanks:
   - {fileID: -6601434307850466603}
-  stringsBankWriteTime: 637465970531593695
+  stringsBankWriteTime: 637466580430106951
   cacheVersion: 6
 --- !u!114 &150895708714800348
 MonoBehaviour:
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_Name: event:/Game/Music/Music_Gameplay
   m_EditorClassIdentifier: 
   Path: event:/Game/Music/Music_Gameplay
-  guid: 674ee30ea3ece14088f86bb9770f6f4b
+  guid: 6c2b1d7464adcd48a3d09feff82bcddb
   Banks:
   - {fileID: -9155318310324979592}
   IsStream: 1
@@ -227,7 +228,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 192000
+  Length: 211889
 --- !u!114 &3039997569474487590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +310,29 @@ MonoBehaviour:
   Path: event:/Game/UI_Gameplay/SwitchPatient
   guid: 9ce26eb520394943b358bd95f19332e3
   Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10600
+--- !u!114 &9136357947281289930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/UI_Menu/UI_Splash
+  m_EditorClassIdentifier: 
+  Path: event:/Game/UI_Menu/UI_Splash
+  guid: 54d16c20493551438ab7501f2685ab29
+  Banks:
+  - {fileID: -9155318310324979592}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
