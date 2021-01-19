@@ -21,7 +21,6 @@ public class Patient : MonoBehaviour
 
     public string pauseNode;
 
-
     [Header("Custom Values")]
 
     [Range(0, 100)]
@@ -33,6 +32,10 @@ public class Patient : MonoBehaviour
 
     int currentSadness;
     int currentAnger;
+
+    public int AdviceNeeded;
+
+    [HideInInspector] public int adviceGained;
 
     public void setCurrentSadness(int value)
     {
@@ -67,6 +70,7 @@ public class Patient : MonoBehaviour
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("CheckEmotionLevels", CheckEmotionLevels);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ResumeDialog", ResumeDialog);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ChangeEmotionValues", ChangeEmotionValues);
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("AdviceGiven", AdviceGiven);
     }
 
     public void initalizePatient()
@@ -78,6 +82,20 @@ public class Patient : MonoBehaviour
             setCurrentSadness(StartingSadness);
 
             StartDialogue();
+        }
+    }
+
+    public void AdviceGiven(string[] info)
+    {
+        if(!(adviceGained >= AdviceNeeded))
+        {
+            int advice = Int32.Parse(info[0]);
+
+            adviceGained++;
+        }
+        else
+        {
+            //Success
         }
     }
 

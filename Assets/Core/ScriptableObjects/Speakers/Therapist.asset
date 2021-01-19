@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abf3f39ffb376741806ce184c006779, type: 3}
   m_Name: Therapist
   m_EditorClassIdentifier: 
-  speakerName: Therapist
+  speakerName: Alwin
   emotions:
   - name: Neutral
     icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637465708248900142
+  lastModified: 637465970531583727
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -54,11 +54,11 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637465708248940091
+  lastModified: 637465970531593695
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 898
+    Value: 1150
   Exists: 1
 --- !u!114 &-6546083826610525457
 MonoBehaviour:
@@ -83,6 +83,75 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 123600
+--- !u!114 &-968605735447243734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/UI_Menu/UI_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/Game/UI_Menu/UI_Hover
+  guid: 9cdac1f0a5710c41a600e1b4e64e0af5
+  Banks:
+  - {fileID: -9155318310324979592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 626
+--- !u!114 &-724331612724020828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/Speech/Positive
+  m_EditorClassIdentifier: 
+  Path: event:/Game/Speech/Positive
+  guid: f1373d3fea777146adc09de4548fcd4f
+  Banks:
+  - {fileID: -9155318310324979592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1906
+--- !u!114 &-163617058138942609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/Speech/Neutral
+  m_EditorClassIdentifier: 
+  Path: event:/Game/Speech/Neutral
+  guid: 90196d4faca7bf4899e3731417680026
+  Banks:
+  - {fileID: -9155318310324979592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2220
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +170,11 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 2283812917132048925}
   - {fileID: -6546083826610525457}
+  - {fileID: 7188919642499502099}
+  - {fileID: -163617058138942609}
+  - {fileID: -968605735447243734}
+  - {fileID: 3039997569474487590}
+  - {fileID: -724331612724020828}
   EditorParameters:
   - {fileID: 4429799108867363786}
   - {fileID: -7028011608399550096}
@@ -109,7 +183,7 @@ MonoBehaviour:
   - {fileID: -9155318310324979592}
   StringsBanks:
   - {fileID: -6601434307850466603}
-  stringsBankWriteTime: 637465708248940091
+  stringsBankWriteTime: 637465970531593695
   cacheVersion: 6
 --- !u!114 &150895708714800348
 MonoBehaviour:
@@ -144,7 +218,7 @@ MonoBehaviour:
   m_Name: event:/Game/Music/Music_Gameplay
   m_EditorClassIdentifier: 
   Path: event:/Game/Music/Music_Gameplay
-  guid: 2cf8841159d9bf45bc1327dbd28320b7
+  guid: 674ee30ea3ece14088f86bb9770f6f4b
   Banks:
   - {fileID: -9155318310324979592}
   IsStream: 1
@@ -154,6 +228,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 192000
+--- !u!114 &3039997569474487590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/Speech/Negative
+  m_EditorClassIdentifier: 
+  Path: event:/Game/Speech/Negative
+  guid: b084331c28ab4e40a40d40458232a6ea
+  Banks:
+  - {fileID: -9155318310324979592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2194
 --- !u!114 &4429799108867363786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +271,29 @@ MonoBehaviour:
     data1: 3626216617
     data2: 1808165378
   Exists: 1
+--- !u!114 &7188919642499502099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/UI_Menu/UI_Click
+  m_EditorClassIdentifier: 
+  Path: event:/Game/UI_Menu/UI_Click
+  guid: 658dd41554971d40ba44b534e5438bcb
+  Banks:
+  - {fileID: -9155318310324979592}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 600
 --- !u!114 &7372682614598742738
 MonoBehaviour:
   m_ObjectHideFlags: 0

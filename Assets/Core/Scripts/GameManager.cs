@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject normalPostProcessing;
     public GameObject deathPostProcessing;
 
+    public GameObject Background;
+
     public Image transitionUI;
 
     public float fadeInTime = 0.1f;
@@ -60,11 +62,15 @@ public class GameManager : MonoBehaviour
     }
     public void patientSuicide(string[] info)
     {
+        Background.GetComponent<Animator>().SetBool("Blood", true);
+        patients[currentPatient].GetComponent<Character>().deathPose.SetActive(true);
+        patients[currentPatient].GetComponent<SpriteRenderer>().enabled = false;
         patientEnd();
         StartCoroutine(deathWait());
     }
     public void playerDeath(string[] info)
     {
+        Background.GetComponent<Animator>().SetBool("Blood", true);
         patientEnd();
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
@@ -98,6 +104,7 @@ public class GameManager : MonoBehaviour
     {
         transitionUI.enabled = true;
         yield return new WaitForSeconds(1f);
+        Background.GetComponent<Animator>().SetBool("Blood", false);
 
         patients[currentPatient].gameObject.SetActive(false);
         currentPatient++;

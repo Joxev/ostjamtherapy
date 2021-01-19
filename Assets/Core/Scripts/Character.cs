@@ -6,4 +6,12 @@ public class Character : MonoBehaviour
 {
     public Transform textPoint;
     public Transform focusPoint;
+
+    public GameObject deathPose;
+
+
+    private void OnEnable()
+    {
+        deathPose.SetActive(false);
+    }
 }
