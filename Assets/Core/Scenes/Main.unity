@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1472,19 +1472,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientName: Otis
-  yarnDialog: {fileID: 2480198943629176163, guid: d348b5594b14594428df1370a4a9d361,
+  yarnDialog: {fileID: 2480198943629176163, guid: efd2e1f4e59b86c48b4d9fee3207c918,
     type: 3}
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
-  suicideStartNode: Suicide
-  playerDeathStartNode: BreakingPointAnger
+  breakingPointAnger: BreakingPointAnger
+  breakingPointSadness: BreakingPointSadness
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 361966520}
-  AdviceNeeded: 0
-  adviceGained: 0
 --- !u!95 &361966520
 Animator:
   serializedVersion: 3
@@ -2070,6 +2068,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameplayEvent: event:/Game/Music/Music_Gameplay
+  destroyOnLoad: 1
+  volume: 1
 --- !u!4 &554397877
 Transform:
   m_ObjectHideFlags: 0
@@ -3100,14 +3100,12 @@ MonoBehaviour:
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
-  suicideStartNode: 
-  playerDeathStartNode: BreakingPointAnger
+  breakingPointAnger: 
+  breakingPointSadness: 
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 999813391}
-  AdviceNeeded: 0
-  adviceGained: 0
 --- !u!95 &999813391
 Animator:
   serializedVersion: 3
@@ -4435,6 +4433,21 @@ MonoBehaviour:
   - name: anger
     value: 0
     type: 0
+  - name: AdviceGiven
+    value: 0
+    type: 0
+  - name: OtisAdvice1
+    value: true
+    type: 2
+  - name: OtisAdvice2
+    value: true
+    type: 2
+  - name: OtisAdvice3
+    value: true
+    type: 2
+  - name: OtisAdvice4
+    value: true
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &1432773573
 MonoBehaviour:
@@ -5302,14 +5315,12 @@ MonoBehaviour:
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
-  suicideStartNode: 
-  playerDeathStartNode: BreakingPointAnger
+  breakingPointAnger: 
+  breakingPointSadness: 
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 1873286931}
-  AdviceNeeded: 0
-  adviceGained: 0
 --- !u!95 &1873286931
 Animator:
   serializedVersion: 3
@@ -6142,14 +6153,12 @@ MonoBehaviour:
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
-  suicideStartNode: 
-  playerDeathStartNode: BreakingPointAnger
+  breakingPointAnger: 
+  breakingPointSadness: 
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 2069081474}
-  AdviceNeeded: 0
-  adviceGained: 0
 --- !u!114 &2069081476
 MonoBehaviour:
   m_ObjectHideFlags: 0

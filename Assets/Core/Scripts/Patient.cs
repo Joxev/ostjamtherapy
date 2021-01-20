@@ -16,8 +16,8 @@ public class Patient : MonoBehaviour
     [SerializeField] string yarnStartNode = "Start";
     [SerializeField] string angerStartNode;
     [SerializeField] string sadnessStartNode;
-    [SerializeField] string suicideStartNode;
-    [SerializeField] string playerDeathStartNode;
+    [SerializeField] string breakingPointAnger;
+    [SerializeField] string breakingPointSadness;
 
     public string pauseNode;
 
@@ -32,10 +32,6 @@ public class Patient : MonoBehaviour
 
     int currentSadness;
     int currentAnger;
-
-    public int AdviceNeeded;
-
-    [HideInInspector] public int adviceGained;
 
     public void setCurrentSadness(int value)
     {
@@ -70,7 +66,6 @@ public class Patient : MonoBehaviour
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("CheckEmotionLevels", CheckEmotionLevels);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ResumeDialog", ResumeDialog);
         BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ChangeEmotionValues", ChangeEmotionValues);
-        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("AdviceGiven", AdviceGiven);
     }
 
     public void initalizePatient()
@@ -82,20 +77,6 @@ public class Patient : MonoBehaviour
             setCurrentSadness(StartingSadness);
 
             StartDialogue();
-        }
-    }
-
-    public void AdviceGiven(string[] info)
-    {
-        if(!(adviceGained >= AdviceNeeded))
-        {
-            int advice = Int32.Parse(info[0]);
-
-            adviceGained++;
-        }
-        else
-        {
-            //Success
         }
     }
 
@@ -167,11 +148,11 @@ public class Patient : MonoBehaviour
             {
                 if (currentSadness > currentAnger)
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + suicideStartNode);
+                    BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + breakingPointSadness);
                 }
                 else
                 {
-                    BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + playerDeathStartNode);
+                    BubbleDialogueUI.instance.dialogueRunner.StartDialogue(patientName + "." + breakingPointAnger);
                 }
             }
         }

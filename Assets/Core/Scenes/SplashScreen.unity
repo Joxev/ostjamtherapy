@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameplayEvent: event:/Game/UI_Menu/UI_Splash
+  destroyOnLoad: 1
+  volume: 1
 --- !u!4 &349019552
 Transform:
   m_ObjectHideFlags: 0

@@ -1,0 +1,283 @@
+title: Otis.Start
+tags: 
+colorID: 0
+position: 1308,-5
+---
+<< set $AdviceGiven to 0>> 
+<< SetSpeaker Alwin Neutral>>
+... I'm sorry, what were you saying?
+<< SetSpeaker Otis Neutral>>
+I wasn't saying anything, doctor.
+<< SetSpeaker Alwin Neutral>>
+Oh, yes. My mistake. Do you go by "Otis?"
+<< SetSpeaker Otis Neutral>>
+"Otis" or "Odie." Well, that's more what my parents call me, I suppose.
+<< SetSpeaker Alwin Neutral>>
+"Odie," hm? I like that. Are you close with your parents?
+<< SetSpeaker Otis Neutral>>
+Closer than most, heh. I live with them.
+<< SetSpeaker Alwin Neutral>>
+Ah. How's that going?
+<< SetSpeaker Otis Neutral>>
+It's usually alright. But lately things have been weird. That's why they said I should come here. 'Dunno why. I feel fine.
+<< SetSpeaker Alwin Neutral>>
+Well, let's see if we can get to the bottom of this.
+[[ Otis.MainNode]]
+===
+title: Otis.MainNode
+tags: 
+colorID: 0
+position: 1239,-403
+---
+<< if $AdviceGiven > 3>>
+   [[ Otis.EndNode ]]
+<<endif>>
+<< SetSpeaker Alwin Neutral>>
+hmm...
+<< if $OtisAdvice1 is true>>
+    [[ Why did your parents want you to come to therapy? |Otis.QuestionOne]]
+<<endif>>
+<< if $OtisAdvice2 is true>>
+    [[ What's a regular day like for you? |Otis.QuestionTwo]]
+<<endif>>
+===
+title: Otis.EndNode
+tags: 
+colorID: 0
+position: 1562,-6
+---
+<< SetSpeaker Otis Neutral>>
+You have given me a lot to think about.
+<< SetSpeaker Otis Neutral>>
+I think i need to work on myself.
+<< PatientSuccess>>
+===
+title: Otis.QuestionOne
+tags: 
+colorID: 0
+position: 473,761
+---
+<< Set $OtisAdvice1 to false>> 
+<< SetSpeaker Otis Neutral>>
+They've been saying I need to "talk with someone."
+<< SetSpeaker Otis Neutral>>
+What is that even supposed to mean?
+[[ Have you been having problems with each other recently? |Otis.QuestionOneSubOne]]
+[[ What do you think it means? |Otis.QuestionOneSubTwo]]
+===
+title: Otis.QuestionTwo
+tags: 
+colorID: 0
+position: 342,46
+---
+<< Set $OtisAdvice2 to false>> 
+<< SetSpeaker Alwin Neutral>>
+What's a regular day like for you?
+<< SetSpeaker Otis Neutral>>
+Well I get up and make breakfast.
+<< SetSpeaker Otis Neutral>>
+Then I usually head to my basement and read or browse some... online sites. 
+<< SetSpeaker Otis Neutral>>
+I like takeout for dinner. There's a P.F. Chang's a few minutes from the house.
+<< SetSpeaker Otis Neutral>>
+Sometimes I head out for a movie or a walk around the mall.
+[[ How do you make yourself productive during the day? |Otis.QuestionTwoSubOne]]
+[[ So what times do you usually go to bed and wake up? |Otis.QuestionTwoSubTwo]]
+===
+title: Otis.QuestionOneSubOne
+tags: 
+colorID: 0
+position: 1059,305
+---
+<< SetSpeaker Otis Neutral>>
+I guess it means they don't want to talk to me themselves, huh?
+-> Do you not get along with them?
+    [[ Otis.QuestionOneAdviceOne]]
+-> Do you wish you got along with them better?
+    << SetSpeaker Otis Neutral>>
+    I mean, yeah. Of course.
+    [[ Otis.QuestionOneAdviceTwo]]
+===
+title: Otis.QuestionOneSubTwo
+tags: 
+colorID: 0
+position: 758,123
+---
+<< SetSpeaker Otis Neutral>>
+Oh, you know. Whenever it hits me.
+<< SetSpeaker Alwin Neutral>>
+You don't set regular times for sleeping and waking?
+<< SetSpeaker Otis Neutral>>
+Who needs regular times?
+<< SetSpeaker Otis Neutral>>
+You get up when you get up and sleep when you sleep. 
+<< SetSpeaker Otis Neutral>>
+Sometimes I do my best work at night.
+<< SetSpeaker Alwin Neutral>>
+-> You should try to develop a daily routine!
+[[ Otis.GiveAdvice]]
+===
+title: Otis.QuestionTwoSubOne
+tags: 
+colorID: 0
+position: 632,338
+---
+<< ChangeEmotionValues Anger 20>>
+[[ Otis.QuestionTwoSubOneA]]
+===
+title: Otis.QuestionTwoSubTwo
+tags: 
+colorID: 0
+position: 840,-330
+---
+<< SetSpeaker Otis Neutral>>
+Oh, you know. Whenever it hits me.
+<< SetSpeaker Alwin Neutral>>
+You don't set regular times for sleeping and waking?
+<< SetSpeaker Otis Neutral>>
+Who needs regular times?
+<< SetSpeaker Otis Neutral>>
+You get up when you get up and sleep when you sleep. 
+<< SetSpeaker Otis Neutral>>
+Sometimes I do my best work at night.
+<< SetSpeaker Alwin Neutral>>
+-> You should try to develop a daily routine!
+[[ Otis.GiveAdvice]]
+===
+title: Otis.GiveAdvice
+tags: 
+colorID: 0
+position: -121,279
+---
+<< CheckEmotionLevels>> 
+[[ Otis.GiveAdvice2 ]]
+===
+title: Otis.GiveAdvice2
+tags: 
+colorID: 0
+position: -106,-21
+---
+<< set $AdviceGiven to $AdviceGiven + 1>>
+[[ Otis.MainNode ]]
+===
+title: Otis.QuestionTwoSubOneA
+tags: 
+colorID: 0
+position: 109,-362
+---
+<< CheckEmotionLevels>> 
+<< SetSpeaker Otis Neutral>>
+Productive? What do you mean?
+<< SetSpeaker Otis Neutral>>
+I'm always working on things.
+<< SetSpeaker Otis Neutral>>
+Reading, writing, researching, networking.
+<< SetSpeaker Otis Neutral>>
+I'm just waiting for things to come together.
+<< SetSpeaker Otis Neutral>>
+It'll all work out eventually, you'll see.
+<< SetSpeaker Alwin Neutral>>
+Could you tell me what actual work you accomplish?
+[[ Otis.QuestionTwoAdviceOne ]]
+===
+title: Otis.QuestionTwoAdviceOne
+tags: 
+colorID: 0
+position: 493,-246
+---
+<< SetSpeaker Otis Neutral Red NoType>>
+Pfft. What would you know about actual work?
+<< SetSpeaker Otis Neutral Red NoType>>
+You just sit in here all day scribbling in your notepad.
+-> You have to watch you temper Otis...
+    << ChangeEmotionValues Anger 30>>
+-> This scribbling helps people Otis, You could try to help people too like me.
+    << ChangeEmotionValues Anger 10>>
+[[ Otis.GiveAdvice ]]
+===
+title: Otis.QuestionOneAdviceOne
+tags: 
+colorID: 0
+position: 40,728
+---
+<< SetSpeaker Otis Neutral>>
+It's not that we don't get along. But I guess we don't talk as much as we used to.
+<< SetSpeaker Otis Neutral>>
+[[ You should open up to your family. |Otis.QuestionOneAdviceOneA]]
+[[ You have got to watch your temper. |Otis.QuestionOneAdviceOneB]]
+===
+title: Otis.QuestionOneAdviceTwo
+tags: 
+colorID: 0
+position: 380,419
+---
+<< SetSpeaker Otis Neutral>>
+It's just that they've been saying that I get angry all the time. Which isn't true.
+-> Watch your temper!
+    << ChangeEmotionValues Anger 30>>
+    << SetSpeaker Otis Neutral>>
+    yeah.. Thats what people tell me.
+[[ Otis.GiveAdvice ]]
+===
+title: Otis.QuestionOneAdviceOneA
+tags: 
+colorID: 0
+position: 923,651
+---
+<< ChangeEmotionValues Sadness 40>>
+[[ Otis.GiveAdvice ]]
+===
+title: Otis.QuestionOneAdviceOneB
+tags: 
+colorID: 0
+position: 785,444
+---
+<< SetSpeaker Otis Neutral>>
+yeah.. Thats what people tell me.
+[[ Otis.GiveAdvice]]
+===
+title: Otis.Anger
+tags: 
+colorID: 0
+position: 1460,247
+---
+<< SetSpeaker Otis Neutral>>
+Nobody understands me, you are all the same!
+<< SetSpeaker Alwin Neutral>>
+[[Take it easy! |Otis.PlayerDeath]]
+[[Calm down |Otis.PlayerDeath]]
+[[I'm just trying to help! |Otis.PlayerDeath]]
+[[I understand you. |Otis.Resume]]
+===
+title: Otis.PlayerDeath
+tags: 
+colorID: 0
+position: 1147,526
+---
+<< SetSpeaker Otis Neutral Big Red NoType TempShake>>
+I don't need help.
+<< SetSpeaker Otis Neutral Large Red NoType Shake>>
+I don't need you!
+<< PlayerDeath>>
+===
+title: Otis.Resume
+tags: 
+colorID: 0
+position: 1484,521
+---
+<< SetSpeaker Otis Neutral Small>>
+... 
+<< SetSpeaker Otis Neutral>>
+sorry for lashing out
+<< ChangeEmotionValues Anger -30>>
+<< ResumeDialog>>
+===
+title: Otis.BreakingPointAnger
+tags: 
+colorID: 0
+position: 1716,251
+---
+<< SetSpeaker Otis Neutral Red NoType TempShake>>
+You have been no help to me!
+[[ Otis.PlayerDeath]]
+===

@@ -89,7 +89,8 @@ public class CircularMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        StartCoroutine(startGameWait());
+        SoundManager.instance.GameplaySound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        SceneManager.LoadScene(GameSceneIndex);
     }
     public void BackButton()
     {
@@ -100,15 +101,14 @@ public class CircularMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    IEnumerator startGameWait()
+    /*IEnumerator startGameWait()
     {
         if (animDone)
         {
-            SoundManager.instance.GameplaySound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            SceneManager.LoadScene(GameSceneIndex);
+          
         }
         yield return null;
         StartCoroutine(startGameWait());
-    }
+    }*/
 }
 
