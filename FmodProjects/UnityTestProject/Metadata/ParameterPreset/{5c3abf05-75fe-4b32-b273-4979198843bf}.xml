@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{5c3abf05-75fe-4b32-b273-4979198843bf}">
+		<property name="name">
+			<value>Death</value>
+		</property>
+		<relationship name="folder">
+			<destination>{38062142-00bf-4e25-978a-019070d922ab}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{293e96eb-8ffe-44e8-9888-77f750588356}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{293e96eb-8ffe-44e8-9888-77f750588356}">
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
