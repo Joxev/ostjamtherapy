@@ -747,6 +747,7 @@
 			<destination>{b8a05591-a012-411e-8c37-8bcc9b7cefce}</destination>
 			<destination>{f4f22904-dd6a-4e5c-b775-29afa25ac063}</destination>
 			<destination>{62497838-1f49-42e2-9d9b-2bb518f3cfdb}</destination>
+			<destination>{f3da5dbb-e14a-4582-8dbe-b8a3b5b0d867}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{99a6292c-3daf-4397-88b0-fff2469323c1}" />
@@ -1008,6 +1009,11 @@
 			<destination>{795350a0-e27e-4b3b-bd28-92269896c253}</destination>
 			<destination>{3a281add-f082-499a-a514-0d45ae584a8c}</destination>
 		</relationship>
+	</object>
+	<object class="GainEffect" id="{f3da5dbb-e14a-4582-8dbe-b8a3b5b0d867}">
+		<property name="gain">
+			<value>-12</value>
+		</property>
 	</object>
 	<object class="AutomationPoint" id="{46e396b8-b574-4c8a-b461-920143ddf90f}">
 		<property name="position">

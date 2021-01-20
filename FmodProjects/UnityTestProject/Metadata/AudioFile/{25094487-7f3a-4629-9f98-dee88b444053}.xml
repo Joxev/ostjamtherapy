@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{25094487-7f3a-4629-9f98-dee88b444053}">
 		<property name="assetPath">
-			<value>OST MUSIC ALL/MAYBE/awwbree - Terminal Lover.ogg</value>
+			<value>OST Music/awwbree - Terminal Lover.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
