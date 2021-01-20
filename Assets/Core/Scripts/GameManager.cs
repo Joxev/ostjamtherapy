@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject deathPostProcessing;
 
     public GameObject Background;
+    public GameObject FlowerPot;
 
     public Image transitionUI;
 
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         death();
         Background.GetComponent<Animator>().SetBool("Blood", true);
+        FlowerPot.GetComponent<Animator>().SetBool("dead", true);
         patients[currentPatient].GetComponent<Character>().deathPose.SetActive(true);
         patients[currentPatient].GetComponent<SpriteRenderer>().enabled = false;
         patientEnd();
@@ -79,6 +81,7 @@ public class GameManager : MonoBehaviour
     {
         death();
         Background.GetComponent<Animator>().SetBool("Blood", true);
+        FlowerPot.GetComponent<Animator>().SetBool("dead", true);
         Therapist.GetComponent<Character>().deathPose.SetActive(true);
         Therapist.GetComponent<SpriteRenderer>().enabled = false;
         patientEnd();
@@ -88,6 +91,7 @@ public class GameManager : MonoBehaviour
     }
     public void death()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Death", 1);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Player_Death");
     }
     public void patientEnd()
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
         transitionUI.enabled = true;
         yield return new WaitForSeconds(1f);
         Background.GetComponent<Animator>().SetBool("Blood", false);
+        FlowerPot.GetComponent<Animator>().SetBool("dead", false);
 
         patients[currentPatient].gameObject.SetActive(false);
         currentPatient++;
@@ -136,6 +141,6 @@ public class GameManager : MonoBehaviour
         }
         transitionUI.enabled = false;
 
-        //SoundManager.instance.GameplaySound.setPaused(false);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Death", 0);
     }
 }

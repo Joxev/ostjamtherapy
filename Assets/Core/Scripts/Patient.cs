@@ -30,8 +30,8 @@ public class Patient : MonoBehaviour
 
     public Animator anim;
 
-    int currentSadness;
-    int currentAnger;
+    [HideInInspector] public int currentSadness;
+    [HideInInspector] public int currentAnger;
 
     public void setCurrentSadness(int value)
     {

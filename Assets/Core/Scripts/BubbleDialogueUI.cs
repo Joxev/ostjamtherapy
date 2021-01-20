@@ -207,6 +207,22 @@ public class BubbleDialogueUI : Singleton<BubbleDialogueUI>
             currentSpeaker.speaker.GetComponent<SpriteRenderer>().sprite = data.GetEmotionSprite(emotion);
             currentSpeaker.speaker.GetComponent<Animator>().SetBool("talking", true);
             textParent.transform.position = Camera.main.WorldToScreenPoint(currentSpeaker.speaker.GetComponent<Character>().textPoint.position);
+
+            if(currentSpeaker.speaker.GetComponent<Patient>())
+            {
+                if ((currentSpeaker.speaker.GetComponent<Patient>().currentAnger < 25) && currentSpeaker.speaker.GetComponent<Patient>().currentSadness < 25)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Speech/Positive");
+                }
+                else
+                {
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Speech/Negative");
+                }
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Speech/Neutral");
+            }
         }
 
         int index = 0;
