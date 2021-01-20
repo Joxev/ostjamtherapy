@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMOD;
+using FMODUnity;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour
     }
     public void patientSuicide(string[] info)
     {
+        death();
         Background.GetComponent<Animator>().SetBool("Blood", true);
         patients[currentPatient].GetComponent<Character>().deathPose.SetActive(true);
         patients[currentPatient].GetComponent<SpriteRenderer>().enabled = false;
@@ -74,6 +77,7 @@ public class GameManager : MonoBehaviour
     }
     public void playerDeath(string[] info)
     {
+        death();
         Background.GetComponent<Animator>().SetBool("Blood", true);
         Therapist.GetComponent<Character>().deathPose.SetActive(true);
         Therapist.GetComponent<SpriteRenderer>().enabled = false;
@@ -81,6 +85,10 @@ public class GameManager : MonoBehaviour
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
         //GameOver
+    }
+    public void death()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Player_Death");
     }
     public void patientEnd()
     {
@@ -92,7 +100,7 @@ public class GameManager : MonoBehaviour
     {
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         suicideCount++;
         
@@ -127,5 +135,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         transitionUI.enabled = false;
+
+        //SoundManager.instance.GameplaySound.setPaused(false);
     }
 }

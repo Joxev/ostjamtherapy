@@ -12,6 +12,8 @@ public class CircularMenu : MonoBehaviour
     public int CreditsSceneIndex = 3;
     public int SettingsSceneIndex = 4;
 
+    public FadeInMenu fadeIn;
+
     float value = 1;
 
     public bool isHover = false;
@@ -30,6 +32,7 @@ public class CircularMenu : MonoBehaviour
     {
         animDone = false;
         carrotUi.SetActive(false);
+        fadeIn.cm = this;
     }
 
     private void Update()
@@ -111,7 +114,16 @@ public class CircularMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SettingsSceneIndex);
     }
+    bool callOnce = false;
     public void StartGame()
+    {
+        if(!callOnce)
+        {
+            fadeIn.StartCoroutine(fadeIn.FadeIn());
+            callOnce = true;
+        }
+    }
+    public void StartGameAfterFade()
     {
         SoundManager.instance.GameplaySound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene(GameSceneIndex);

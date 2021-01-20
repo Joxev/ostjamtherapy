@@ -76,7 +76,7 @@ What is that even supposed to mean?
 title: Otis.QuestionTwo
 tags: 
 colorID: 0
-position: 717,264
+position: 717,265
 ---
 << set $OtisAdvice2 to false>> 
 << SetSpeaker Alwin Neutral>>
@@ -189,7 +189,7 @@ what?
 title: Otis.QuestionTwoAdviceOne
 tags: 
 colorID: 0
-position: 904,30
+position: 952,76
 ---
 << CheckEmotionLevels >> 
 << SetSpeaker Otis Neutral Red NoType Shake>>
@@ -309,7 +309,7 @@ Oh, I've got plans for the future, doctor. Big plans.
 << SetSpeaker Otis Neutral>>
 My parents don't understand. They think I'm just lazin' around all day.
 -> Perhaps they're just concerned for your wellbeing.
-    << ChangeEmotionValues Anger 20>>
+    << ChangeEmotionValues Anger 100>>
     << SetSpeaker Otis Neutral>>
     Pfft, yeah. Is that why they brought me here? You don't get it either. You're just like them.
     [[ Otis.QuestionThreeSubTwo ]]
@@ -358,8 +358,12 @@ position: 996,910
 << CheckEmotionLevels>>
 << SetSpeaker Alwin Neutral>>
 "Otis just feels misunderstood."
--> You should try and open up otis.. you should feel loved by your family.
-[[ Otis.GiveAdvice ]]
+-> You should try and open up Otis, you should feel loved by your family.
+    << SetSpeaker Otis Neutral>>
+    I feel out of place...
+     << SetSpeaker Otis Neutral>>
+    Like they dont respect me
+[[ Otis.GiveAdvice]]
 ===
 title: Otis.QuestionFour
 tags: 

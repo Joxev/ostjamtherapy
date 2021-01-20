@@ -85,7 +85,6 @@ public class Patient : MonoBehaviour
 
     public void ChangeEmotionValues(string[] info)
     {
-        print("test");
         switch(info[0])
         {
             case "Anger":
