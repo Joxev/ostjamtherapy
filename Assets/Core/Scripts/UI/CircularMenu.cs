@@ -24,6 +24,8 @@ public class CircularMenu : MonoBehaviour
 
     bool animDone = false;
 
+    string buttonPressed;
+
     private void Start()
     {
         animDone = false;
@@ -49,6 +51,7 @@ public class CircularMenu : MonoBehaviour
             {
                 animDone = true;
                 carrotUi.SetActive(true);
+                StartCoroutine(menuWait());
             }
         }
         else if(!isHover)
@@ -69,11 +72,32 @@ public class CircularMenu : MonoBehaviour
         textPointHolder.transform.rotation = Quaternion.Euler(textPointHolder.transform.rotation.x, textPointHolder.transform.rotation.y, value);
     }
 
-    public void onClick(float targetRot)
+    private IEnumerator menuWait()
+    {
+        yield return new WaitForSeconds(1);
+        switch(buttonPressed)
+        {
+            case "Start":
+                StartGame();
+                break;
+            case "Credits":
+                StartCredits();
+                break;
+            case "Options":
+                StartSettings();
+                break;
+            case "Quit":
+                QuitGame();
+                break;
+        }
+    }
+
+    public void onClick(float targetRot, string _buttonPressed)
     {
         if(!hasClicked)
         {
             targetRotation = targetRot;
+            buttonPressed = _buttonPressed;
             hasClicked = true;
         }
     }

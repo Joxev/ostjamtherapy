@@ -8,7 +8,10 @@ public class MainMenuText : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
 {
     public CircularMenu CM;
     public Transform point;
+    public string buttonFunction;
     bool clicked = false;
+
+
 
     public float topRotation;
 
@@ -26,7 +29,7 @@ public class MainMenuText : MonoBehaviour , IPointerEnterHandler, IPointerExitHa
     public void OnClick()
     {
         clicked = true;
-        CM.onClick(topRotation);
+        CM.onClick(topRotation, buttonFunction);
     }
 
     private void Update()

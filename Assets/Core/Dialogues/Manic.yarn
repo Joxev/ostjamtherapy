@@ -1,7 +1,7 @@
 title: Otis.Start
 tags: 
 colorID: 0
-position: 1308,-5
+position: 1227,105
 ---
 << set $AdviceGiven to 0>> 
 << SetSpeaker Alwin Neutral>>
@@ -21,13 +21,14 @@ Ah. How's that going?
 << SetSpeaker Otis Neutral>>
 It's usually alright. But lately things have been weird. That's why they said I should come here. 'Dunno why. I feel fine.
 << SetSpeaker Alwin Neutral>>
+<< Test >> 
 Well, let's see if we can get to the bottom of this.
 [[ Otis.MainNode]]
 ===
 title: Otis.MainNode
 tags: 
 colorID: 0
-position: 1239,-403
+position: 1276,-372
 ---
 << if $AdviceGiven > 3>>
    [[ Otis.EndNode ]]
@@ -55,22 +56,23 @@ I think i need to work on myself.
 title: Otis.QuestionOne
 tags: 
 colorID: 0
-position: 473,761
+position: 410,924
 ---
-<< Set $OtisAdvice1 to false>> 
+<<set $OtisAdvice1 to false>> 
 << SetSpeaker Otis Neutral>>
 They've been saying I need to "talk with someone."
 << SetSpeaker Otis Neutral>>
 What is that even supposed to mean?
 [[ Have you been having problems with each other recently? |Otis.QuestionOneSubOne]]
 [[ What do you think it means? |Otis.QuestionOneSubTwo]]
+
 ===
 title: Otis.QuestionTwo
 tags: 
 colorID: 0
-position: 342,46
+position: 378,73
 ---
-<< Set $OtisAdvice2 to false>> 
+<< set $OtisAdvice2 to false>> 
 << SetSpeaker Alwin Neutral>>
 What's a regular day like for you?
 << SetSpeaker Otis Neutral>>
@@ -87,7 +89,7 @@ Sometimes I head out for a movie or a walk around the mall.
 title: Otis.QuestionOneSubOne
 tags: 
 colorID: 0
-position: 1059,305
+position: -3,455
 ---
 << SetSpeaker Otis Neutral>>
 I guess it means they don't want to talk to me themselves, huh?
@@ -101,7 +103,7 @@ I guess it means they don't want to talk to me themselves, huh?
 title: Otis.QuestionOneSubTwo
 tags: 
 colorID: 0
-position: 758,123
+position: 785,95
 ---
 << SetSpeaker Otis Neutral>>
 Oh, you know. Whenever it hits me.
@@ -120,7 +122,7 @@ Sometimes I do my best work at night.
 title: Otis.QuestionTwoSubOne
 tags: 
 colorID: 0
-position: 632,338
+position: 747,426
 ---
 << ChangeEmotionValues Anger 20>>
 [[ Otis.QuestionTwoSubOneA]]
@@ -147,7 +149,7 @@ Sometimes I do my best work at night.
 title: Otis.GiveAdvice
 tags: 
 colorID: 0
-position: -121,279
+position: -592,391
 ---
 << CheckEmotionLevels>> 
 [[ Otis.GiveAdvice2 ]]
@@ -163,7 +165,7 @@ position: -106,-21
 title: Otis.QuestionTwoSubOneA
 tags: 
 colorID: 0
-position: 109,-362
+position: 107,-366
 ---
 << CheckEmotionLevels>> 
 << SetSpeaker Otis Neutral>>
@@ -178,27 +180,38 @@ I'm just waiting for things to come together.
 It'll all work out eventually, you'll see.
 << SetSpeaker Alwin Neutral>>
 Could you tell me what actual work you accomplish?
+<< ChangeEmotionValues Anger 25>> 
+<< SetSpeaker Otis Neutral Small TempShake>>
+what?
 [[ Otis.QuestionTwoAdviceOne ]]
 ===
 title: Otis.QuestionTwoAdviceOne
 tags: 
 colorID: 0
-position: 493,-246
+position: 488,-248
 ---
-<< SetSpeaker Otis Neutral Red NoType>>
+<< CheckEmotionLevels >> 
+<< SetSpeaker Otis Neutral Red NoType Shake>>
 Pfft. What would you know about actual work?
-<< SetSpeaker Otis Neutral Red NoType>>
+<< SetSpeaker Otis Neutral Red NoType Shake>>
 You just sit in here all day scribbling in your notepad.
+<< SetSpeaker Otis Neutral>>
+Don't Judge Me
 -> You have to watch you temper Otis...
     << ChangeEmotionValues Anger 30>>
+    << SetSpeaker Otis Neutral Red TempShake>>
+    My temper isn't your concern
 -> This scribbling helps people Otis, You could try to help people too like me.
+    << SetSpeaker Otis Neutral>>
+    Yeah, yeah, yeah    
     << ChangeEmotionValues Anger 10>>
+    
 [[ Otis.GiveAdvice ]]
 ===
 title: Otis.QuestionOneAdviceOne
 tags: 
 colorID: 0
-position: 40,728
+position: 52,875
 ---
 << SetSpeaker Otis Neutral>>
 It's not that we don't get along. But I guess we don't talk as much as we used to.
@@ -222,7 +235,7 @@ It's just that they've been saying that I get angry all the time. Which isn't tr
 title: Otis.QuestionOneAdviceOneA
 tags: 
 colorID: 0
-position: 923,651
+position: 916,651
 ---
 << ChangeEmotionValues Sadness 40>>
 [[ Otis.GiveAdvice ]]
@@ -230,7 +243,7 @@ position: 923,651
 title: Otis.QuestionOneAdviceOneB
 tags: 
 colorID: 0
-position: 785,444
+position: -240,618
 ---
 << SetSpeaker Otis Neutral>>
 yeah.. Thats what people tell me.

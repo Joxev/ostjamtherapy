@@ -53,19 +53,17 @@ public class Patient : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("CheckEmotionLevels", CheckEmotionLevels);
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ResumeDialog", ResumeDialog);
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ChangeEmotionValues", ChangeEmotionValues);
+        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("Test", Test);
     }
     private void OnDisable()
     {
         BubbleDialogueUI.instance.dialogueRunner.RemoveCommandHandler("CheckEmotionLevels");
         BubbleDialogueUI.instance.dialogueRunner.RemoveCommandHandler("ResumeDialog");
         BubbleDialogueUI.instance.dialogueRunner.RemoveCommandHandler("ChangeEmotionValues");
-    }
-    private void Start()
-    {
-        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("CheckEmotionLevels", CheckEmotionLevels);
-        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ResumeDialog", ResumeDialog);
-        BubbleDialogueUI.instance.dialogueRunner.AddCommandHandler("ChangeEmotionValues", ChangeEmotionValues);
+        BubbleDialogueUI.instance.dialogueRunner.RemoveCommandHandler("Test");
     }
 
     public void initalizePatient()
@@ -80,8 +78,14 @@ public class Patient : MonoBehaviour
         }
     }
 
+    public void Test(string[] info)
+    {
+        print("test");
+    }
+
     public void ChangeEmotionValues(string[] info)
     {
+        print("test");
         switch(info[0])
         {
             case "Anger":
@@ -105,7 +109,7 @@ public class Patient : MonoBehaviour
         anim.SetBool("sad", false);
         anim.SetBool("angry", false);
 
-        if ((currentAnger < 50) && (currentSadness < 25)) // Happy
+        if ((currentAnger < 25) && (currentSadness < 25)) // Happy
         {
             anim.SetBool("happy", true);
         }
