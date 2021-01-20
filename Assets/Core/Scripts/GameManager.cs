@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public List<Patient> patients = new List<Patient>();
 
+    public Character Therapist;
+
+    public GameObject Camera;
+
     int currentPatient = 0;
     int suicideCount = 0;
 
@@ -71,6 +75,8 @@ public class GameManager : MonoBehaviour
     public void playerDeath(string[] info)
     {
         Background.GetComponent<Animator>().SetBool("Blood", true);
+        Therapist.GetComponent<Character>().deathPose.SetActive(true);
+        Therapist.GetComponent<SpriteRenderer>().enabled = false;
         patientEnd();
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
@@ -78,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
     public void patientEnd()
     {
+        patients[currentPatient].GetComponent<Animator>().SetBool("talking", false);
         BubbleDialogueUI.instance.text.GetComponent<TextMeshProUGUI>().text = "";
         BubbleDialogueUI.instance.dialogueRunner.Stop();
     }

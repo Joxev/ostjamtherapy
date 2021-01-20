@@ -2585,6 +2585,7 @@ MonoBehaviour:
   - {fileID: 361966519}
   - {fileID: 1873286930}
   - {fileID: 2069081475}
+  Therapist: {fileID: 2052067049}
   normalPostProcessing: {fileID: 2101671172}
   deathPostProcessing: {fileID: 641061922}
   Background: {fileID: 1061356754}
