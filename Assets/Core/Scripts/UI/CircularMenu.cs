@@ -103,6 +103,7 @@ public class CircularMenu : MonoBehaviour
             targetRotation = targetRot;
             buttonPressed = _buttonPressed;
             hasClicked = true;
+            StartCoroutine(menuWait());
         }
     }
 
