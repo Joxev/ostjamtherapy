@@ -99,6 +99,7 @@ public class CircularMenu : MonoBehaviour
     {
         if(!hasClicked)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game/UI_Menu/UI_Click");
             targetRotation = targetRot;
             buttonPressed = _buttonPressed;
             hasClicked = true;

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using FMOD;
 using FMODUnity;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     public Character Therapist;
 
     public GameObject Camera;
+
+    public int EndingSceneIndex = 5;
 
     int currentPatient = 0;
     int suicideCount = 0;
@@ -49,17 +52,19 @@ public class GameManager : MonoBehaviour
     }
     public void initalizePatient()
     {
+        if(patients[currentPatient] == null)
+        {
+            SceneManager.LoadScene(EndingSceneIndex);
+        }
         patients[currentPatient].gameObject.SetActive(true);
         patients[currentPatient].initalizePatient();
     }
     Coroutine nextP;
     public void nextPatient()
     {
-        if(currentPatient >= patients.Count)
-        {
-            //Game Over
-            return;
-        }
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Sadness", 0);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Anger", 0);
         nextP = StartCoroutine(nextPatientWait());
     }
     public void patientSuccess(string[] info)
@@ -87,12 +92,19 @@ public class GameManager : MonoBehaviour
         patientEnd();
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
-        //GameOver
     }
     public void death()
     {
+        StartCoroutine(playerDeathWait());
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Death", 1);
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Player_Death");
+    }
+
+    IEnumerator playerDeathWait()
+    {
+        transitionUI.enabled = true;
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(EndingSceneIndex);
     }
     public void patientEnd()
     {
@@ -104,13 +116,13 @@ public class GameManager : MonoBehaviour
     {
         deathPostProcessing.SetActive(true);
         normalPostProcessing.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         suicideCount++;
         
-        if(suicideCount >= 2)
+        if(suicideCount > 1)
         {
-            //Game Over
+            SceneManager.LoadScene(EndingSceneIndex);
         }
         else
         {
@@ -122,13 +134,23 @@ public class GameManager : MonoBehaviour
     IEnumerator nextPatientWait()
     {
         transitionUI.enabled = true;
-        yield return new WaitForSeconds(1f);
-        Background.GetComponent<Animator>().SetBool("Blood", false);
-        FlowerPot.GetComponent<Animator>().SetBool("dead", false);
+        yield return new WaitForSeconds(3f);
+        if (!(currentPatient >= patients.Count))
+        {
+            Background.GetComponent<Animator>().SetBool("Blood", false);
+            FlowerPot.GetComponent<Animator>().SetBool("dead", false);
+        }
 
         patients[currentPatient].gameObject.SetActive(false);
         currentPatient++;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Progress", currentPatient);
+
+        if(currentPatient >= patients.Count)
+        {
+            print("End");
+            StartCoroutine(playerDeathWait());
+            StopCoroutine(nextP);
+        }
 
         initalizePatient();
 

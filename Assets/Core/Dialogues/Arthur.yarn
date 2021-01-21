@@ -1,0 +1,426 @@
+title: Arthur.Resume
+tags: 
+colorID: 0
+position: 1107,166
+---
+<< SetSpeaker Arthur Neutral Small>>
+... 
+<< SetSpeaker Arthur Neutral>>
+sorry for that.. i.. well nevermind.
+<< ChangeEmotionValues Anger -30>>
+<< ResumeDialog>>
+===
+title: Arthur.PlayerDeath
+tags: 
+colorID: 0
+position: 1108,-62
+---
+<< SetSpeaker Arthur Neutral Big Red NoType TempShake>>
+I don't need help.
+<< SetSpeaker Arthur Neutral Large Red NoType Shake>>
+I don't need you!
+<< PlayerDeath>>
+===
+title: Arthur.Anger
+tags: 
+colorID: 0
+position: 1529,63
+---
+<< SetSpeaker Arthur Neutral>>
+Why did i even come here.. you don't understand
+[[I can save you Arthur.. |Arthur.Resume]]
+[[Listen to me Arthur! |Arthur.PlayerDeath]]
+[[Let me help you! |Arthur.PlayerDeath]]
+[[I'm just trying to help! |Arthur.PlayerDeath]]
+===
+title: Arthur.Start
+tags: 
+colorID: 0
+position: 776,-382
+---
+<< set $AdviceGiven to 0>> 
+<< SetSpeaker Alwin Neutral>>
+Hello, Arthur. You look healthier than the last time we spoke.
+<< SetSpeaker Arthur Neutral>>
+Yes, I've been doing a lot of exercise this past week!
+<< SetSpeaker Alwin Neutral>>
+Really? What sort of exercises?
+<< SetSpeaker Arthur Neutral>>
+Well, it's nothing special, really. Just laps around the apartment. 
+<< SetSpeaker Alwin Neutral>>
+Around the apartment?
+<< SetSpeaker Arthur Neutral>>
+Yep. 1,000 square feet from wall to wall!
+<< SetSpeaker Alwin Neutral>>
+I see.
+[[ Arthur.MainNode]]
+===
+title: Arthur.EndNode
+tags: 
+colorID: 0
+position: 1041,-387
+---
+<< ChangeEmotionValues Anger -80>>
+<< SetSpeaker Otis Neutral>>
+You have given me a lot to think about.
+<< SetSpeaker Otis Neutral>>
+I think i need to work on myself.
+<< PatientSuccess>>
+===
+title: Arthur.MainNode
+tags: 
+colorID: 0
+position: 536,-378
+---
+<< if $AdviceGiven > 3>>
+   [[ Arthur.EndNode ]]
+<<endif>>
+<< SetSpeaker Alwin Neutral>>
+hmm...
+<< if $ArthurAdvice1 is true>>
+    [[ Why not go to the gym, Arthur? |Arthur.QuestionOne]]
+<<endif>>
+<< if $ArthurAdvice2 is true>>
+    [[ Wouldn't your apartment smell bad if you exercised in it all week? |Arthur.QuestionTwo]]
+<<endif>>
+<< if $ArthurAdvice3 is true>>
+    [[ Have you been keeping up with your journal? |Arthur.QuestionThree]]
+<<endif>>
+<< if $ArthurAdvice4 is true>>
+    [[ How have you been feeling lately? |Arthur.QuestionFour]]
+<<endif>>
+<< if $ArthurAdvice5 is true>>
+    [[ Have you been taking your medication, Arthur? |Arthur.QuestionFive]]
+<<endif>>
+===
+title: Arthur.GiveAdvice
+tags: 
+colorID: 0
+position: -414,53
+---
+<< CheckEmotionLevels>> 
+[[ Arthur.GiveAdvice2 ]]
+===
+title: Arthur.GiveAdvice2
+tags: 
+colorID: 0
+position: -399,-309
+---
+<< set $AdviceGiven to $AdviceGiven + 1>>
+[[ Arthur.MainNode ]]
+===
+title: Arthur.QuestionOne
+tags: 
+colorID: 0
+position: 305,-708
+---
+<< set $ArthurAdvice1 to false>>
+<< SetSpeaker Alwin Neutral>>
+Why not go to the gym, Arthur?
+<< SetSpeaker Arthur Neutral>>
+Oh, I didn't mean like that...
+-> What do you mean, Arthur?
+    << ChangeEmotionValues Anger 60>>
+    [[ Arthur.QuestionOneSubOne]]
+-> Oh...I think I know what you mean
+    [[Arthur.QuestionOneSubTwo]]
+===
+title: Arthur.QuestionTwo
+tags: 
+colorID: 0
+position: -157,-537
+---
+<< set $ArthurAdvice2 to false>>
+<< SetSpeaker Arthur Neutral>>
+You're telling me! Not showering doesn't help, either. But I've just been so busy with the little rascals running around. The landlord does nothing, obviously. She thinks I'm crazy!
+-> Rascals? Are you babysitting currently?
+    << SetSpeaker Arthur Neutral>>
+    No, not kids. The critters that live in my walls. They steal things from me! Greedy fuckers. Can't get any sleep with them jumping on the furniture.
+    [[ Arthur.QuestionTwoSubOne ]]
+-> Arthur, I told you that you have to take care of your hygiene.
+    << ChangeEmotionValues Sadness 40>>
+    << SetSpeaker Arthur Neutral>>
+    I know! I'm a dirty, stinky man! I'm worthless and I hate myself!
+    [[ Arthur.QuestionTwoSubTwo ]]
+===
+title: Arthur.QuestionThree
+tags: 
+colorID: 0
+position: 608,-688
+---
+<< set $ArthurAdvice3 to false>>
+<< SetSpeaker Arthur Neutral>>
+Yes, sir. Although I didn't get a lot of writing done...
+-> Did you bring it with you?
+    << SetSpeaker Arthur Neutral>>
+    Of course. It's right... oh. I think I left it in my other pants.
+    << SetSpeaker Alwin Neutral>>
+    You need to keep better track of your things, Arthur.
+    << ChangeEmotionValues Anger 50>>
+    << SetSpeaker Arthur Neutral>>
+    Well it's not my fault. There's so much going on, of course I'm bound to lose some worthless journal. It's your fault for giving it to me in the first place!
+    [[ Arthur.QuestionThreeSubOne]]
+-> Arthur, I told you to focus on the journal, it's for your own good.
+    << SetSpeaker Arthur Neutral>>
+    Well what's the fucking point anyway? I don't even know what I'm thinking half the time.
+    << SetSpeaker Alwin Neutral>>
+    That's exactly why the journal will help, Arthur. It will help organize your thoughts.
+    [[ Arthur.QuestionThreeSubTwo]]
+===
+title: Arthur.QuestionFour
+tags: 
+colorID: 0
+position: 929,-730
+---
+<< set $ArthurAdvice4 to false>>
+<< SetSpeaker Arthur Neutral>>
+Bad, my apartment is a mess. I haven't found the time to tidy it up
+-> Why haven't you found the time, Arthur?
+    << SetSpeaker Arthur Neutral>>
+    I spend all my time in my head...its just a constant wave up and down up and down, it never stops! How can I organize when my mind wont leave me alone? I cant help it, what can I do? the pills you gave me don't do anything...
+    [[ Arthur.QuestionFourSubOne]]
+-> What is preoccupying your time so much, Arthur?
+    << SetSpeaker Arthur Neutral>>
+    Oh, you know this and that...My thoughts get all fragmented and stuff.
+    [[ Arthur.QuestionFourSubTwo]]
+===
+title: Arthur.Sadness
+tags: 
+colorID: 0
+position: 1535,278
+---
+<< SetSpeaker Arthur Neutral>>
+I'm so lonely, i thought you would help me.
+[[I can help you! |Arthur.Suicide]]
+[[Arthur you know i'm the only one who can help you. |Arthur.Resume]]
+[[Let me try to help you |Arthur.Suicide]]
+[[Give me a chance Arthur. |Arthur.Suicide]]
+===
+title: Arthur.BreakingPointSadness
+tags: 
+colorID: 0
+position: 1523,-384
+---
+<< SetSpeaker Arthur Neutral>>
+I needed you're help..
+[[ Arthur.Suicide ]]
+===
+title: Arthur.QuestionFive
+tags: 
+colorID: 0
+position: 1284,-700
+---
+<< set $ArthurAdvice5 to false>>
+<< SetSpeaker Arthur Neutral>>
+Yes. They're not working. I'm just so tired of feeling bad all the time...can you increase my dosage?
+-> The law prohibits me from going any higher, Arthur.
+    << SetSpeaker Arthur Neutral>>
+    The goblins say that they need their fix. What you're giving me isn't enough.
+    [[ Arthur.QuestionFiveSubOne ]]
+-> Sure Arthur! How much should I write you down for?
+    << SetSpeaker Arthur Neutral>>
+    Oh good! I was thinking maybe double it to start? 
+    [[ Arthur.QuestionFiveSubTwo ]]
+===
+title: Arthur.BreakingPointAnger
+tags: 
+colorID: 0
+position: 1524,-155
+---
+<< SetSpeaker Otis Neutral Red NoType TempShake>>
+You have been no help to me!
+[[ Arthur.PlayerDeath]]
+===
+title: Arthur.Suicide
+tags: 
+colorID: 0
+position: 1284,-382
+---
+<< SetSpeaker Arthur Neutral>>
+You can't save me.. No one can...
+<< PatientSuicide>>
+===
+title: Arthur.QuestionOneSubOne
+tags: 
+colorID: 0
+position: 610,20
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Arthur Neutral>>
+You know what I mean! God you people always pretend not to know. Oh look at me! I'm just totally oblivious to Arthur and his woes! God you people make me sick!
+<< SetSpeaker Alwin Neutral>>
+"he's alienating himself and losing touch with reality"
+<< SetSpeaker Alwin Neutral>>
+"Arthur is becoming more aggressive with each passing session"
+->  Arthur I'm just doing my job!
+    << ChangeEmotionValues Anger -20>>
+    << ChangeEmotionValues Sadness 70>>
+    << SetSpeaker Arthur Neutral>>
+    I know! I'm sorry...
+-> Arthur, we've known each other for a long time, you know I'm just trying to help
+    << ChangeEmotionValues Anger -10>>
+    << ChangeEmotionValues Sadness 50>>
+    << SetSpeaker Arthur Neutral>>
+    I don't know anything...
+[[ Arthur.GiveAdvice ]]
+===
+title: Arthur.QuestionOneSubTwo
+tags: 
+colorID: 0
+position: 37,-780
+---
+<< SetSpeaker Arthur Neutral>>
+Finally someone who understands without me spelling it out for them! Wow I cant believe this! You are so good at this!
+<< SetSpeaker Alwin Neutral>>
+"Arthur seems to be totally losing touch with reality"
+-> Now will you open up to me a bit more, Arthur?
+    << SetSpeaker Arthur Neutral>>
+    Yes i'll try..
+[[ Arthur.GiveAdvice ]]
+===
+title: Arthur.QuestionTwoSubOne
+tags: 
+colorID: 0
+position: 178,-238
+---
+<< SetSpeaker Arthur Neutral>>
+They are so annoying!
+-> Well that sounds like a pain in the neck. What sort of things do they steal?
+    << SetSpeaker Arthur Neutral>>
+    For one, they keep taking my medication. I told you I haven't been misplacing them! But they also sometimes steal my money and clothing! I'm running out of socks!
+    << SetSpeaker Alwin Neutral>>
+    Hm...maybe let your landlord know
+    [[ Arthur.GiveAdvice ]]
+-> Arthur...have you really been taking your medication I prescribed to you?
+    << SetSpeaker Arthur Neutral>>
+    Why does no one listen to me! I cry and cry out for help and no one wants to save me...I told you I have been taking them, they don't help!
+    [[ Arthur.QuestionTwoSubOneA ]]
+===
+title: Arthur.QuestionTwoSubTwo
+tags: 
+colorID: 0
+position: 288,17
+---
+<< CheckEmotionLevels>>
+<< SetSpeaker Alwin Neutral>>
+"Arthur seems to be developing self hatred and neglect due to his illness"
+-> Arthur, you need to take control of your life
+    << SetSpeaker Arthur Neutral>>
+    << ChangeEmotionValues Anger 60>>
+    Don't you think I know that?!
+-> Arthur, we should go over a daily routine plan
+    << SetSpeaker Arthur Neutral>>
+    okay...
+[[ Arthur.GiveAdvice]]
+===
+title: Arthur.QuestionTwoSubOneA
+tags: 
+colorID: 0
+position: 17,-19
+---
+<< SetSpeaker Alwin Neutral>>
+Arthur is becoming more aggressive with each passing session.
+-> I want to help you, Arthur...
+    << SetSpeaker Arthur Neutral>>
+    I don't know...
+-> Okay, Arthur I believe you...
+    << ChangeEmotionValues Sadness 40>>
+    << SetSpeaker Arthur Neutral>>
+    No you don't! you just lie lie lie!
+    << ChangeEmotionValues Anger -20>>
+[[ Arthur.GiveAdvice ]]
+===
+title: Arthur.QuestionThreeSubOne
+tags: 
+colorID: 0
+position: 821,338
+---
+<< CheckEmotionLevels>> 
+<< SetSpeaker Alwin Neutral>>
+"Arthur is disorganized and has scatter brain and lacks discipline"
+-> Don't be so hard on yourself, Arthur...
+    << ChangeEmotionValues Anger 40>>
+    << SetSpeaker Arthur Neutral>>
+    I'm not being hard on myself! Stop assuming things!
+-> Relax Arthur, help me understand...
+    << ChangeEmotionValues Anger -20>>
+    << SetSpeaker Arthur Neutral>>
+    I'm sorry i know it's not your fault..
+[[ Arthur.GiveAdvice]]
+===
+title: Arthur.QuestionThreeSubTwo
+tags: 
+colorID: 0
+position: 469,353
+---
+<< SetSpeaker Arthur Neutral>>
+It's just useless! All this work, this writing, talking, it's nothing. I should end it, right? Right? Yeah. I'm just a waste of everyone's time.
+-> Woah Arthur slow down there.
+    << SetSpeaker Arthur Neutral>>
+    i know im just sick of it.
+-> Bad things are temporary.
+    << SetSpeaker Arthur Neutral>>
+    So i'm just supposed to put up with it??
+    << ChangeEmotionValues Sadness 20>>
+[[ Arthur.GiveAdvice]]
+===
+title: Arthur.QuestionFourSubOne
+tags: 
+colorID: 0
+position: 1880,-377
+---
+<< SetSpeaker Alwin Neutral>>
+*he's alienating himself and losing touch with reality*
+-> Hmm...maybe you want to try out these new drugs? they are experimental but may work for you, Arthur.
+    << ChangeEmotionValues Anger -10>>
+    << SetSpeaker Arthur Neutral>>
+    Wow thanks doc!
+    << ChangeEmotionValues Sadness -20>>
+[[ Arthur.GiveAdvice]]
+===
+title: Arthur.QuestionFourSubTwo
+tags: 
+colorID: 0
+position: 1649,-638
+---
+<< SetSpeaker Alwin Neutral>>
+*Arthur is disorganized and has scatter brain and lacks discipline*
+-> I think we should start meeting more frequently
+    << ChangeEmotionValues Sadness 50>>
+    << SetSpeaker Arthur Neutral>>
+    I don't want to waste more of your time Doctor...
+-> Arthur this is why I told you to make sure you kept a thought journal
+    << ChangeEmotionValues Anger 20>>
+    << SetSpeaker Arthur Neutral>>
+    OH CAPTAIN OBVIOUS IS HERE EVERYBODY!
+[[ Arthur.GiveAdvice]]
+===
+title: Arthur.QuestionFiveSubOne
+tags: 
+colorID: 0
+position: 1309,454
+---
+<< SetSpeaker Arthur Neutral>>
+Then we can go from there.
+-> Sure, Arthur. I will make sure that happens for you.
+    << ChangeEmotionValues Anger -30>>
+    << SetSpeaker Arthur Neutral>>
+    Great!
+[[ Arthur.GiveAdvice ]]
+===
+title: Arthur.QuestionFiveSubTwo
+tags: 
+colorID: 0
+position: 1904,-37
+---
+<< SetSpeaker Alwin Neutral>>
+*Arthur is breaking down*
+-> Um. Let's put a pin in that for now.
+    << SetSpeaker Arthur Neutral>>
+    ... fine
+-> Arthur don't be ridiculous.
+    << ChangeEmotionValues Anger 40>>
+    << SetSpeaker Arthur Neutral>>
+    Excuse Me?!
+[[ Arthur.GiveAdvice ]]
+===

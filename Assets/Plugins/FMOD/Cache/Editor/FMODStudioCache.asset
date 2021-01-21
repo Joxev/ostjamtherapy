@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637467616564452855
+  lastModified: 637467639491519216
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
   ID:
     data1: 943624705
     data2: 1320412936
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6601434307850466603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   Path: FmodProjects/UnityTestProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637467616564502484
+  lastModified: 637467639491578841
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -83,6 +83,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 123600
+--- !u!114 &-3457633364559591261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Anger
+  m_EditorClassIdentifier: 
+  Name: Anger
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 3626216617
+    data2: 1808165378
+  Exists: 1
 --- !u!114 &-968605735447243734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,15 +198,15 @@ MonoBehaviour:
   - {fileID: 9136357947281289930}
   - {fileID: 541914239996103311}
   EditorParameters:
-  - {fileID: 4429799108867363786}
-  - {fileID: -7028011608399550096}
-  - {fileID: 150895708714800348}
-  - {fileID: 1574443174987078756}
+  - {fileID: -3457633364559591261}
+  - {fileID: 472169724032239279}
+  - {fileID: 2384890517684582214}
+  - {fileID: 5651506777438102280}
   MasterBanks:
   - {fileID: -9155318310324979592}
   StringsBanks:
   - {fileID: -6601434307850466603}
-  stringsBankWriteTime: 637467616564502484
+  stringsBankWriteTime: 637467639491578841
   cacheVersion: 6
 --- !u!114 &150895708714800348
 MonoBehaviour:
@@ -207,6 +227,26 @@ MonoBehaviour:
   ID:
     data1: 2463302182
     data2: 473553503
+  Exists: 0
+--- !u!114 &472169724032239279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Progress
+  m_EditorClassIdentifier: 
+  Name: Progress
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 943624705
+    data2: 1320412936
   Exists: 1
 --- !u!114 &541914239996103311
 MonoBehaviour:
@@ -250,7 +290,7 @@ MonoBehaviour:
   ID:
     data1: 4127258022
     data2: 3418949215
-  Exists: 1
+  Exists: 0
 --- !u!114 &2283812917132048925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +314,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 204797
+--- !u!114 &2384890517684582214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Sadness
+  m_EditorClassIdentifier: 
+  Name: Sadness
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 2463302182
+    data2: 473553503
+  Exists: 1
 --- !u!114 &3039997569474487590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +376,26 @@ MonoBehaviour:
   ID:
     data1: 3626216617
     data2: 1808165378
+  Exists: 0
+--- !u!114 &5651506777438102280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Death
+  m_EditorClassIdentifier: 
+  Name: Death
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4127258022
+    data2: 3418949215
   Exists: 1
 --- !u!114 &7188919642499502099
 MonoBehaviour:

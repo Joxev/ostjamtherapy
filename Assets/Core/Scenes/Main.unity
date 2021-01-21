@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1126,7 +1126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237114360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 0}
+  m_LocalPosition: {x: 0, y: 1.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 361966517}
@@ -1230,7 +1230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269194957}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 0}
+  m_LocalPosition: {x: 0, y: 1.087, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2069081472}
@@ -1557,6 +1557,8 @@ MonoBehaviour:
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 361966520}
+  currentSadness: 0
+  currentAnger: 0
 --- !u!95 &361966520
 Animator:
   serializedVersion: 3
@@ -2712,10 +2714,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patients:
   - {fileID: 361966519}
-  - {fileID: 1873286930}
   - {fileID: 2069081475}
   Therapist: {fileID: 2052067049}
-  Camera: {fileID: 0}
+  Camera: {fileID: 87642704}
+  EndingSceneIndex: 5
   normalPostProcessing: {fileID: 2101671172}
   deathPostProcessing: {fileID: 641061922}
   Background: {fileID: 1061356754}
@@ -3238,6 +3240,8 @@ MonoBehaviour:
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 999813391}
+  currentSadness: 0
+  currentAnger: 0
 --- !u!95 &999813391
 Animator:
   serializedVersion: 3
@@ -3740,7 +3744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106676264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.347, y: 0.361, z: 0}
+  m_LocalPosition: {x: -1.244, y: 1.134, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1962421700}
@@ -4578,6 +4582,21 @@ MonoBehaviour:
     value: true
     type: 2
   - name: OtisAdvice4
+    value: true
+    type: 2
+  - name: ArthurAdvice1
+    value: true
+    type: 2
+  - name: ArthurAdvice2
+    value: true
+    type: 2
+  - name: ArthurAdvice3
+    value: true
+    type: 2
+  - name: ArthurAdvice4
+    value: true
+    type: 2
+  - name: ArthurAdvice5
     value: true
     type: 2
   debugTextView: {fileID: 0}
@@ -5473,6 +5492,8 @@ MonoBehaviour:
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 1873286931}
+  currentSadness: 0
+  currentAnger: 0
 --- !u!95 &1873286931
 Animator:
   serializedVersion: 3
@@ -6300,17 +6321,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patientName: Arthur
-  yarnDialog: {fileID: 2480198943629176163, guid: d348b5594b14594428df1370a4a9d361,
+  yarnDialog: {fileID: 2480198943629176163, guid: 88ce36ba7f893604d8120c6a4e603022,
     type: 3}
   yarnStartNode: Start
   angerStartNode: Anger
   sadnessStartNode: Sadness
-  breakingPointAnger: 
-  breakingPointSadness: 
+  breakingPointAnger: BreakingPointAnger
+  breakingPointSadness: BreakingPointSadness
   pauseNode: 
   StartingAnger: 0
   StartingSadness: 16
   anim: {fileID: 2069081474}
+  currentSadness: 0
+  currentAnger: 0
 --- !u!114 &2069081476
 MonoBehaviour:
   m_ObjectHideFlags: 0
