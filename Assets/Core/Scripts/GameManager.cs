@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public int EndingSceneIndex = 5;
 
+    public CarryOver carryOver;
+
     int currentPatient = 0;
     int suicideCount = 0;
 
@@ -54,15 +56,18 @@ public class GameManager : MonoBehaviour
     {
         if(patients[currentPatient] == null)
         {
+            carryOver.ending = 0;
             SceneManager.LoadScene(EndingSceneIndex);
         }
-        patients[currentPatient].gameObject.SetActive(true);
-        patients[currentPatient].initalizePatient();
+        else
+        {
+            patients[currentPatient].gameObject.SetActive(true);
+            patients[currentPatient].initalizePatient();
+        }
     }
     Coroutine nextP;
     public void nextPatient()
     {
-
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Sadness", 0);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Anger", 0);
         nextP = StartCoroutine(nextPatientWait());
@@ -74,7 +79,7 @@ public class GameManager : MonoBehaviour
     }
     public void patientSuicide(string[] info)
     {
-        death();
+        carryOver.ending = 2;
         Background.GetComponent<Animator>().SetBool("Blood", true);
         FlowerPot.GetComponent<Animator>().SetBool("dead", true);
         patients[currentPatient].GetComponent<Character>().deathPose.SetActive(true);
@@ -102,6 +107,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator playerDeathWait()
     {
+        carryOver.ending = 1;
+        yield return new WaitForSeconds(3f);
         transitionUI.enabled = true;
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(EndingSceneIndex);

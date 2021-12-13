@@ -7,19 +7,24 @@ public class EndingManager : MonoBehaviour
 {
     //Code written by Joxev (Jack)
 
-    public GameObject dead1;
-    public GameObject dead2;
-    public GameObject dead3;
+    public GameObject playerDead, patientDead, finishGame;
+    public int ending = 0;
     public Image flash;
+    public CarryOver carryOver;
+    public float waitTime;
 
     public int menuindex = 1;
 
 
     private void Start()
     {
-        dead1.SetActive(false);
-        dead2.SetActive(false);
-        dead3.SetActive(false);
+        playerDead.SetActive(false);
+        patientDead.SetActive(false);
+        finishGame.SetActive(false);
+
+        carryOver = FindObjectOfType<CarryOver>().GetComponent<CarryOver>();
+
+        ending = carryOver.ending;
 
         StartCoroutine(flashDead());
     }
@@ -27,22 +32,22 @@ public class EndingManager : MonoBehaviour
     IEnumerator flashDead()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Game/Player_Death");
-        dead1.SetActive(true);
-        yield return new WaitForSeconds(0.4f);
-        dead1.SetActive(false);
-        flash.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        flash.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.35f);
-        dead2.SetActive(true);
-        yield return new WaitForSeconds(0.3f);
-        dead2.SetActive(false);
-        flash.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        flash.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.45f);
-        dead3.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        
+        if(ending == 1)
+        {
+            playerDead.SetActive(true);
+        }
+        else if (ending == 2)
+        {
+            patientDead.SetActive(true);
+        }
+        else
+        {
+            finishGame.SetActive(true);
+        }
+        Destroy(carryOver.gameObject);
+
+        yield return new WaitForSeconds(waitTime);
 
         StartCoroutine( FadeIn());
         yield return new WaitForSeconds(3f);
